@@ -103,7 +103,7 @@ func handleClient(conn net.Conn) {
 		modif = strings.Replace(modif, string([]rune{10, 32}), string([]rune{10}), -1)
 		currentText = &modif
 		modifFormat := formatText(*currentText, 70)
-		modifFormat = "\x0a" + modifFormat
+		modifFormat = "\x0a" + modifFormat + "> "
 		currentText = &modifFormat
 
 		// Ecriture du text dans la connexion TCP

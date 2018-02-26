@@ -13,9 +13,9 @@ nodes:
         Dans cette simulation, à chaque nouvelle page plusieurs choix vous sont proposés
         avec un numéro. Entrer ce numéro vous fait progreser vers une nouvelle situation.
         Lorsque vous avez la possibilité de revenir en arrière une possibilité
-        supplémentaire est affichée et correspond au caractère 'B' comme dans back.
+        supplémentaire est affichée et correspond au caractère 'B' pour "back".
         Le but de la simulation est la mise en situation réelle, qui passe
-        nécéssairement par la collecte d'informations. Il est fortement recommandé de
+        nécessairement par la collecte d'informations. Il est fortement recommandé de
         prendre des notes. Dans certaines situations, vous servir d'un élément
         d'information que vous avez collecté peut vous permettre de progresser ou
         pourrait même être la seule possibilité vous permettant de ne pas être démasqué.
@@ -60,25 +60,25 @@ nodes:
       text: >
         Cet ordinateur dispose d'un accès internet. \n
         Vous pouvez acceder à des sites internet en tappant leur nom, comme dans un
-        moteur de recherche. La liste de vos favoris est disponible en tappant 'help'\n
+        moteur de recherche. La liste de vos favoris est disponible en tappant 'help'\n\n
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: (?i)^fb$|facebook(\\.com)?$
+        - regex: (?i)^fb$|facebook(\.com)?$
           dest: facebook
-        - regex: (?i)^ln$|linkedin(\\.com$)?
+        - regex: (?i)^ln$|linkedin(\.com$)?
           dest: linkedin
         - regex: (?i)^who(is)?$
           dest: whois
-        - regex: (?i)gm|mail|^gmail(\\.com)?$
+        - regex: (?i)gm|mail|^gmail(\.com)?$
           dest: gmail
         - regex: (?i)^isgd$
           dest: isgd
         - regex: (?i)^help$
           dest: help
-        - regex: (?i)^pharmacrap$|^(www\\.)?pharmacrap\\.com$
+        - regex: (?i)^pharmacrap$|^(www\.)?pharmacrap\.com$
           dest: pharmacrap
-        - regex: (?i)^laser(tag|game)?$|^cybertag$|^cyber tag$|^(www\\.)?cyber-tag.net$
+        - regex: (?i)^laser(tag|game)?$|^cybertag$|^cyber tag$|^(www\.)?cyber-tag.net$
           dest: lasertag
         - regex: (?i)^B$
           dest: pc
@@ -98,8 +98,8 @@ nodes:
       text: >
         Vous pouvez tenter de trouver le profil d'un utilisateur de facebook,  en
         tapant son prénom et son nom. \n\n
-        1. Connexion avec un autre compte
-        * : Utilisez vos connaissances\n
+        1. Connexion avec un autre compte\n
+        * : Utilisez vos connaissances\n"
         B : Revenir en arrière
       engine:
         - regex: (?i)^1$
@@ -126,7 +126,7 @@ nodes:
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: (?i)^eternalHawk$|^eternalhawk@gmail\\.com$
+        - regex: (?i)^eternalhawk$|^eternalhawk@gmail\.com$
           dest: fbpw
         - regex: (?i)^B$
           dest: facebook
@@ -148,7 +148,7 @@ nodes:
       name: linkedin
       text: >
         Vous pouvez tenter de trouver le profil d'un utilisateur de linkedin en
-        tapant son prénom et son nom.
+        tapant son prénom et son nom.\n\n
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
@@ -168,16 +168,16 @@ nodes:
   - node:
       name: whois
       text: >
-        Ce service vous permet d'obtenir des informations sur un nom de domaine.\n
+        \n\nCe service vous permet d'obtenir des informations sur un nom de domaine.\n
         Entrez un nom de domaine : \n\n
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: (?i)^(www\\.)?pharmacrap\\.com$
+        - regex: (?i)^(www\.)?pharmacrap\.com$
           dest: who:pharmacrap
-        - regex: (?i)^(www\\.)?cyber-tag.net$
+        - regex: (?i)^(www\.)?cyber-tag\.net$
           dest: who:cybertag
-        - regex: (?i)^hawkins.me$
+        - regex: (?i)^hawkins\.me$
           dest: who:hawkins
         - regex: (?i)^B$
           dest: search
@@ -195,7 +195,7 @@ nodes:
           dest: gmcreate
         - regex: (?i)^2$
           dest: gmrecover
-        - regex: (?i)^eternalHawk$|^eternalhawk@gmail\\.com$
+        - regex: (?i)^eternalHawk$|^eternalhawk@gmail\.com$
           dest: gmpw
         - regex: (?i)^B$
           dest: search
@@ -208,7 +208,7 @@ nodes:
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: ^ahchom0e\\i$
+        - regex: ^ahchom0e\i$
           dest: gm:asjh
         - regex: (?i)^b$
           dest: gmail
@@ -220,7 +220,7 @@ nodes:
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: (?i)^(http://)?(www.)?f--acebook.com/login.php$
+        - regex: (?i)^(https://)?(www.)?facebook.net$
           dest: isgd:fakefb
         - regex: (?i)^b$
           dest: search
@@ -228,38 +228,223 @@ nodes:
   - node:
       name: isgd:fakefb
       text: >
-        L'URL raccourcie de https://f--acebook.com/login.php https://is.gd/jrl128
+        L'URL raccourcie de https://www.facebook.net est https://is.gd/EAXkYL
 
   - node:
       name: pharmacrap
       text: >
-        L'adresse du site est www.pharmacrap.com. \n\n\nInclude website there
+        L'adresse du site est www.pharmacrap.com. \n\n\n
+        PharmaCrap\n 
+        YOUR HEALTH IS OUR WEALTH\n\n
+        
+        Produits | Recherche | Entreprise | Contact\n\n
+        
+        PharmaCrap s'investit dans la recherche contre les maladies 
+        néo-infectieuses et s'appuie sur plus de 15 ans de recherches.
+        Depuis 2013 PharmaCrap concentre ses efforts sur la génétique
+        et les nanotechnologies pour combattre les microbes à la racine.\n\n
+        
+        PharmaCrap Inc.\n
+        805 5th Ave. | Seattle Washington 53105\n
+        Tel: 734-402-4000 | Fax: 734-402-9150\n\n
+        
+        © PharmaCrap Incorporated. Tous droits réservés. PharmaCrap est une marque déposée. 
 
   - node:
       name: lasertag
       text: >
-        L'adresse du site est www.cyber-tag.net \n\n\nInclude website there
+        L'adresse du site est www.cyber-tag.net \n\n\n
+
+        Cyber-Tag
+        
+        Laser | Tarifs | Plan | Contact
+        
+        Cyber-Tag vous accueille du lundi au samedi, pour des combats 
+        incroyables ! Venez avec un groupe d'au moins 5 personnes, ou 
+        participez aux séances d'initiation le samedi matin de 9h à 12h.
+
+        *Nouveau* Le CyberTag accueillera très prochainement le premier 
+        tournoi de LaserGame de l'état de Washington.
+
+        CyberTag
+        17600 W Valley Hwy | Tukwila Washington 98188 
+        Tel: 425-490-1330
+        
 
   - node:
       name: who:pharmacrap
       text: >
-        Le résultat de la recherche whois est le suivant : \n Include whois there
- 
+        Le résultat de la recherche whois est le suivant : \n\n
+
+        Domain Name: PHARMACRAP.COM\n
+        Registry Domain ID: 16805031_DOMAIN_COM-VRSN\n
+        Registrar WHOIS Server: whois.networksolutions.com\n
+        Registrar URL: http://www.networksolutions.com\n
+        Updated Date: 2017-12-18T23:29:59Z\n
+        Creation Date: 2000-01-07T19:04:45Z\n
+        Registrar Registration Expiration Date: 2022-01-07T05:00:00Z\n
+        Registrar: NETWORK SOLUTIONS, LLC.\n
+        Registrar IANA ID: 2\n
+        Registrar Abuse Contact Email: abuse@web.com\n
+        Registrar Abuse Contact Phone: +1.8003337680\n
+        Reseller: \n
+        Domain Status: \n
+        Registry Registrant ID: \n
+        Registrant Name: PharmaCrap Inc.\n
+        Registrant Organization: PharmaCrap Inc.\n
+        Registrant Street: PO BOX 8110\n
+        Registrant City: SEATTLE\n
+        Registrant State/Province: WA\n
+        Registrant Postal Code: 98104-8110\n
+        Registrant Country: US\n
+        Registrant Phone: +1.7344024000\n
+        Registrant Phone Ext: \n
+        Registrant Fax: +1.7344029150\n
+        Registrant Fax Ext: \n
+        Registrant Email: jhawkins@pharamacrap.com\n
+        Registry Admin ID: \n
+        Admin Name: Hawkins, Jeff\n
+        Admin Organization: PharmaCrap Inc.\n
+        Admin Street: PO BOX 8110\n
+        Admin City: SEATTLE\n
+        Admin State/Province: WA\n
+        Admin Postal Code: 98104-8110\n
+        Admin Country: US\n
+        Admin Phone:+1.8772718820\n
+        Admin Phone Ext: \n
+        Admin Fax: +1.8772718850\n
+        Admin Fax Ext: \n
+        Admin Email: jhawkins@pharamacrap.com\n
+        Registry Tech ID: \n
+        Tech Name: Hawkins, Jeff\n
+        Tech Organization: PharamaCrap Inc.\n
+        Tech Street:  PO BOX 8110\n
+        Tech City: SEATTLE\n
+        Tech State/Province: WA\n
+        Tech Postal Code: 98104-8110\n
+        Tech Country: US\n
+        Tech Phone: +1.8772718820\n
+        Tech Phone Ext: \n
+        Tech Fax: +1.8772718850\n
+        Tech Fax Ext: \n
+        Tech Email: jhawkins@pharamacrap.com\n
+        Name Server: NS99.WORLDNIC.COM\n
+        Name Server: NS100.WORLDNIC.COM\n
+        DNSSEC: Unsigned\n
+        URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/\n
+        >>> Last update of WHOIS database: 2018-02-27T13:06:23Z <<<
+
   - node:
       name: who:cybertag
       text: >
-        Le résultat de la recherche whois est le suivant : \n Include whois there
+        Le résultat de la recherche whois est le suivant : \n\n
+
+        Domain Name: CYBER-TAG.NET\n
+        Registry Domain ID: 19802713_DOMAIN_COM-VRSN\n
+        Registrar WHOIS Server: whois.networksolutions.com\n
+        Registrar URL: http://www.networksolutions.com\n
+        Updated Date: 2017-11-25T23:29:59Z\n
+        Creation Date: 2008-03-09T17:35:24Z\n
+        Registrar Registration Expiration Date: 2022-01-03T05:00:00Z\n
+        Registrar: NETWORK SOLUTIONS, LLC.\n
+        Registrar IANA ID: 2\n
+        Registrar Abuse Contact Email: abuse@web.com\n
+        Registrar Abuse Contact Phone: +1.8003337680\n
+        Reseller: \n
+        Domain Status: \n
+        Registry Registrant ID: \n
+        Registrant Name: CyberTag\n
+        Registrant Organization: CyberTag\n
+        Registrant Street: 17600 W Valley Hwy\n
+        Registrant City: TUKWILA\n
+        Registrant State/Province: WA\n
+        Registrant Postal Code: 98188\n
+        Registrant Country: US\n
+        Registrant Phone: +1.4254901330\n
+        Registrant Phone Ext: \n
+        Registrant Fax:\n
+        Registrant Fax Ext: \n
+        Registrant Email: jalbertson@gmail.com \n
+        Registry Admin ID: \n
+        Admin Name: Albertson, Joe\n
+        Admin Organization: CyberTag\n
+        Admin Street: \n
+        Admin City: \n
+        Admin State/Province: \n
+        Admin Postal Code: \n
+        Admin Country: \n
+        Admin Phone: +1.4254901330\n
+        Admin Phone Ext: \n
+        Admin Fax: \n
+        Admin Fax Ext: \n
+        Admin Email: jalbertson@gmail\n
+        Name Server: NS99.WORLDNIC.COM\n
+        Name Server: NS100.WORLDNIC.COM\n
+        DNSSEC: Unsigned\n
+        URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/\n
+        >>> Last update of WHOIS database: 2018-03-05T11:02:56Z <<<
+  
+  - node:
+      name: who:hawkins
+      text: >
+        Le résultat de la recherche whois est le suivant : \n\n
+
+        Domain Name: HAWKINS.ME\n
+        Registry Domain ID: 198976713_DOMAIN_COM-VRSN\n
+        Registrar WHOIS Server: whois.networksolutions.com\n
+        Registrar URL: http://www.networksolutions.com\n
+        Updated Date: 2017-05-09T23:29:59Z\n
+        Creation Date: 2013-10-11T13:38:03Z\n
+        Registrar Registration Expiration Date: 2019-05-10T05:00:00Z\n
+        Registrar: NETWORK SOLUTIONS, LLC.\n
+        Registrar IANA ID: 2\n
+        Registrar Abuse Contact Email: abuse@web.com\n
+        Registrar Abuse Contact Phone: +1.8003337680\n
+        Reseller: \n
+        Domain Status: \n
+        Registry Registrant ID: \n
+        Registrant Name: Jeff Hawkins\n
+        Registrant Organization: \n
+        Registrant Street: \n
+        Registrant City: \n
+        Registrant State/Province: \n
+        Registrant Postal Code: \n
+        Registrant Country: \n
+        Registrant Phone: +1.5053194098\n
+        Registrant Phone Ext: \n
+        Registrant Fax:\n
+        Registrant Fax Ext: \n
+        Registrant Email: eternalhawk@gmail \n
+        Registry Admin ID: \n
+        Admin Name: Hawkins, Jeff\n
+        Admin Organization: \n
+        Admin Street: \n
+        Admin City: \n
+        Admin State/Province: \n
+        Admin Postal Code: \n
+        Admin Country: \n
+        Admin Phone: +1.5053194098\n
+        Admin Phone Ext: \n
+        Admin Fax: \n
+        Admin Fax Ext: \n
+        Admin Email: eternalhawk@gmail\n
+        Name Server: NS99.WORLDNIC.COM\n
+        Name Server: NS100.WORLDNIC.COM\n
+        DNSSEC: Unsigned\n
+        URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/\n
+        >>> Last update of WHOIS database: 2018-03-05T11:02:56Z <<<
 
   - node:
       name: fb:jeffhawkins
       text: >
+
         Les informations extraites du profil facebook de Jeff Hawkins :\n\n
-        Situation familialle \: Il est marié avec Alloïs Hawkins et a un fils de
+        Situation familialle : Il est marié avec Alloïs Hawkins et a un fils de
         11 ans Ethan.\n\n
 
-        Hobbies \: Adepte de LaserGame, il partage et like tous les évènements de
+        Hobbies : Adepte de LaserGame, il partage et like tous les évènements de
         la société de LaserGame, Cyber Tag.
-        Son mur est visible uniquement par ses amis mais l'on peut voir une photo\n
+        Son mur est visible uniquement par ses amis mais on peut voir une photo\n
         de banière publique avec un score de partie de LaserGame.
         On peut voir les pseudos de son équipe sur l'image :\n
           MrMeeseeks: 5600 pts, \n
@@ -270,13 +455,12 @@ nodes:
         On trouve un commentaire de Allan Kopinsky sous la photo : Ahah, battu de
         100 points, t'auras pas autant de chance samedi prochain :p.\n\n
        
-        Lectures \: Il est fan de science fiction de d'heroïc fantasy, la saga du
+        Lectures : Il est fan de science fiction de d'heroïc fantasy, la saga du
         disque-monde, les romans de Tolkien et JRR. Martin, ainsi que les oeuvres
         sur l'univers warcraft.
 
-        Musique \: Il écoute du jazz et du blues. Il aprécie également les
+        Musique : Il écoute du jazz et du blues. Il aprécie également les
         compositeur de BO de films Hans Zimmer, Howard Shore et John Williams.
-       
  
   - node:
       name: fb:asjh
@@ -305,7 +489,7 @@ nodes:
   - node:
       name: ln:jeffhawkins
       text: >
-        Vous voyez que Jeff Hawkins est actuelement administrateur système, web et
+        Vous voyez que Jeff Hawkins est actuellement administrateur système, web et
         réseau chez PharmaCrap.
         A partir de son CV vous obtenez : \n
           - son numéro de portable : +1 505 319 4098\n
@@ -317,7 +501,7 @@ nodes:
       text: >
           Vous êtes connecté sur gmail avec le compte de Jeff Hawkins...\n\n
          
-          Voici la liste des 5 derniers e-mails \: \n
+          Voici la liste des 5 derniers e-mails : \n
           1-
           2-
           3-
@@ -434,7 +618,7 @@ nodes:
       name: set:splaser
       text: >
         Sujet: Tournois de LaserGame à Seattle\n
-        Corps\: Bonjour Jeff,\n
+        Corps: Bonjour Jeff,\n
         l'équipe du CyberTag a l'immense plaisir d'organiser un grand tournois de \n
         Lasergame entre les meilleurs combatants de l'état de Washington.
         Ce tournois aura lieu le Samedi 7 Mars 2018 sur notre terrain habituel au \n
@@ -443,7 +627,7 @@ nodes:
         Nous avons tout de suite pensé à toi pour participer puisque tu culmine \n
         dans le top 3 au tableau des scores de notre salle.\n\n
 
-        Le grand vaiqueur de ce tournois amateur empochera la somme de 3000$ et\n
+        Le grand vainqueur de ce tournois amateur empochera la somme de 3000$ et\n
         se verra offrir un abonnement de 1 an à notre salle en libre accès.\n\n
 
         Pour l'instant le formulaire d'inscription n'est pas encore en ligne, \n
@@ -463,9 +647,9 @@ nodes:
         lien vers l'évènement facebook :
        
       engine:
-        - regex: (?i)^https://is\\.gd/jrl128$
+        - regex: (?i)^https://is\.gd/EAXkYL$
           dest: set:chresp
-        - regex: (?i)^(http(s)?://)?f--acebook\\.com(/login\\.php)?$
+        - regex: (?i)^(http(s)?://)?facebook\.net(/login\.php)?$
           dest: set:shorten
         - regex: (?i)^b$
           dest: set
@@ -501,9 +685,9 @@ nodes:
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: (?i)^(http(s)://)?(www\\.)?facebook\\.com(/login\\.php)?$
+        - regex: (?i)^(http(s)://)?(www\.)?facebook\.com(/login\.php)?$
           dest: set:chok
-        - regex: (?i)^(http(s)?://)?(www\\.)?gmail\\.com(/login\\.php)?$
+        - regex: (?i)^(http(s)?://)?(www\.)?gmail\.com(/login\.php)?$
           dest: set:chnok
         - regex: (?i)^b$
           dest: set
@@ -522,7 +706,7 @@ nodes:
       text: >
        
           Vous vous êtes arrangé pour avoir un serveur avec une ip publique et\n
-          le nom de domaine f--acebook.com ainsi qu'un certificat SSL\n
+          le nom de domaine facebook.net ainsi qu'un certificat SSL\n
           Let's Encypt valide pour ce nom de domaine.\n\n
 
           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n
@@ -564,7 +748,7 @@ nodes:
           PARAM: lgnrnd=070146_ZYa_\n
           PARAM: lgnjs=1518015725\n
           POSSIBLE USERNAME FIELD FOUND: email=eternalhawk@gmail.com\n
-          POSSIBLE PASSWORD FIELD FOUND: pass=ahChom0e\\i \n
+          POSSIBLE PASSWORD FIELD FOUND: pass=ahChom0e\i \n
           PARAM: prefill_contact_point=\n
           PARAM: prefill_source=\n
           PARAM: prefill_type=\n
@@ -575,4 +759,35 @@ nodes:
           * WHEN YOU'RE FINISHED, HIT CONTROL-C TO GENERATE A REPORT.\n
           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n
          
-          "
+  - node:
+      name: phone
+      text: >
+        Vous pouvez composer un numéro de téléphone au format 
+        xxx-xxx-xxxx:\n\n
+
+        * : Utilisez vos connaissances\n
+        B : Revenir en arrière
+      
+      engine:
+        - regex: (?i)^877-271-8820$
+          dest: ph:pcrap:adm
+        - regex: (?i)^734-402-4000$
+          dest: ph:pcrap:offi
+        - regex: (?i)^505-319-4098$
+          dest: ph:jh:port
+        - regex: (?i)^(http(s)?://)?(www\.)?gmail\.com(/login\.php)?$
+          dest: ph:pcrap:offi
+        - regex: (?i)^b$
+          dest: start
+
+  - node:
+      name: place
+      text: >
+        Vous pouvez entrer une adresse au format N°_de_rue Nom_de_Rue Ville,
+        tout se passe dans l'état de Washington aux Etats Unis donc pas besoin 
+        de le préciser. 
+      engine:
+        - regex: (?i)^b$
+          dest: start
+
+
