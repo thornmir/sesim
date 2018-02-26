@@ -1,434 +1,322 @@
-"myStory": 
-  nodes:
-    node: 1
-      name: "start"
+nodes:
+  - node:
+      name: start
       text: >
-        "Vous êtes un spécialiste du social engineering et vous offrez vos services
-        sur le darknet et ce n\'est pas donné. Vous avez été contacté par un groupe 
-        pharmaceutique qui cherche à affaiblir un de ses concurrents. 
-        La cible est la société PharmaCrap, votre objectif est de trouver des documents 
-        ou des email comprommetants pour nuire à la réputation de la société. Votre 
-        client vous signale qu\'il est également intéréssé par toute information sur 
+        Vous êtes un spécialiste du social engineering et vous offrez vos services
+        sur le darknet et ce n'est pas donné. Vous avez été contacté par un groupe
+        pharmaceutique qui cherche à affaiblir un de ses concurrents.
+        La cible est la société PharmaCrap, votre objectif est de trouver des documents
+        ou des email comprommetants pour nuire à la réputation de la société. Votre
+        client vous signale qu'il est également intéréssé par toute information sur
         les recherches, prochains produits et savoir-faire de la cible.\n\n
         ~~~~~~~~~~\n
-        Dans cette simulation, à chaque nouvelle page plusieurs choix vous sont proposés 
+        Dans cette simulation, à chaque nouvelle page plusieurs choix vous sont proposés
         avec un numéro. Entrer ce numéro vous fait progreser vers une nouvelle situation.
-        Lorsque vous avez la possibilité de revenir en arrière une possibilité 
-        supplémentaire est affichée et correspond au caractère \'B' comme dans back.
-        Le but de la simulation est la mise en situation réelle, qui passe 
-        nécéssairement par la collecte d\'informations. Il est fortement recommandé de 
-        prendre des notes. Dans certaines situations, vous servir d\'un élément 
-        d\'information que vous avez collecté peut vous permettre de progresser ou 
+        Lorsque vous avez la possibilité de revenir en arrière une possibilité
+        supplémentaire est affichée et correspond au caractère 'B' comme dans back.
+        Le but de la simulation est la mise en situation réelle, qui passe
+        nécéssairement par la collecte d'informations. Il est fortement recommandé de
+        prendre des notes. Dans certaines situations, vous servir d'un élément
+        d'information que vous avez collecté peut vous permettre de progresser ou
         pourrait même être la seule possibilité vous permettant de ne pas être démasqué.
-        Lorsqu\'un ou plusieurs élements d'informations peuvent être utilisé une 
-        possibilité supplémentaire est affichée et correspond au caractère \'*'.
-      Maintenant vous avez toutes les clés pour vous en sortir, bonne chance :D !
+        Lorsqu'un ou plusieurs élements d'informations peuvent être utilisé une
+        possibilité supplémentaire est affichée et correspond au caractère '*'.
+        Maintenant vous avez toutes les clés pour vous en sortir, bonne chance :D !\n
         ~~~~~~~~~~\n\n
- 
-        1. Utiliser votre ordinateur portable\n
-        2. Passer un appel téléphonique\n 
-        3. Se rendre sur place\n"
-      engine:[
-        [
-          regex: "(?i)^1$",
-          dest:"pc"
-        ],
-        [
-          regex: "(?i)^2$",
-          dest: "phone"
-        ], 
-        [
-          regex: "(?i)^3$",
-          dest: "place"
-        ]
-      ]
 
-        
-    node:
-      name: "pc"
+        1. Utiliser votre ordinateur portable\n
+        2. Passer un appel téléphonique\n
+        3. Se rendre sur place\n
+      engine:
+        - regex: (?i)^1$
+          dest: pc
+        - regex: (?i)^2$
+          dest: phone
+        - regex: (?i)^3$
+          dest: place
+       
+  - node:
+      name: pc
       text: >
-        "Sur votre ordinateur portable vous avez un linux Kali installé et un accès
-        internet par réseau cellulaire. Vous utilisez des techniques d\'anonymisation 
+        Sur votre ordinateur portable vous avez un linux Kali installé et un accès
+        internet par réseau cellulaire. Vous utilisez des techniques d'anonymisation
         lorsque vous surfez sur le web.\n\n
 
-        1. Surfer sur le web
-        2. Utiliser Social Engineering Toolkit (SET)
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^1$",
-          dest:"search"
-        ],
-        [
-          regex: "(?i)^2$",
-          dest: "set"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "start"
-        ]
-      ]
+        1. Surfer sur le web\n
+        2. Utiliser Social Engineering Toolkit (SET)\n
+        B : Revenir en arrière\n
+      engine:
+        - regex: (?i)^1$
+          dest: search
+        - regex: (?i)^2$
+          dest: set
+        - regex: (?i)^B$
+          dest: start
+       
+     
 
-    node: 
-      name: "search"
+  - node:
+      name: search
       text: >
-        "Cet ordinateur dispose d\'un accès internet. \n
+        Cet ordinateur dispose d'un accès internet. \n
         Vous pouvez acceder à des sites internet en tappant leur nom, comme dans un
-        moteur de recherche. La liste de vos favoris est disponible en tappant \'help'\n
+        moteur de recherche. La liste de vos favoris est disponible en tappant 'help'\n
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^fb$|facebook(\.com)?$",
-          dest:"facebook"
-        ],
-        [
-          regex: "(?i)^ln$|linkedin(\.com$)?",
-          dest: "linkedin"
-        ],
-        [
-          regex: "(?i)^who(is)?$",
-          dest: "whois"
-        ],
-        [
-          regex: "(?i)gm|mail|^gmail(\.com)?$",
-          dest: "gmail"
-        ],
-        [
-          regex: "(?i)^isgd$",
-          dest: "isgd"
-        ],
-        [
-          regex: "(?i)^help$",
-          dest: "help"
-        ],
-        [
-          regex: "(?i)^pharmacrap$|^(www\.)?pharmacrap\.com$"
-          dest: "pharmacrap"
-        ],
-        [
-          regex: "(?i)^laser(tag|game)?$|^cybertag$|^cyber tag$|^(www\.)?cyber-tag.net$",
-          dest: "lasertag"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "pc"
-        ]
-      ]
-    
-    node: 
-      name: "help"
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^fb$|facebook(\\.com)?$
+          dest: facebook
+        - regex: (?i)^ln$|linkedin(\\.com$)?
+          dest: linkedin
+        - regex: (?i)^who(is)?$
+          dest: whois
+        - regex: (?i)gm|mail|^gmail(\\.com)?$
+          dest: gmail
+        - regex: (?i)^isgd$
+          dest: isgd
+        - regex: (?i)^help$
+          dest: help
+        - regex: (?i)^pharmacrap$|^(www\\.)?pharmacrap\\.com$
+          dest: pharmacrap
+        - regex: (?i)^laser(tag|game)?$|^cybertag$|^cyber tag$|^(www\\.)?cyber-tag.net$
+          dest: lasertag
+        - regex: (?i)^B$
+          dest: pc
+ 
+  - node:
+      name: help
       text: >
-        "Liste des sites marqués dans vos favoris: \n
+        Liste des sites marqués dans vos favoris: \n
             - Facebook\n
             - Linkedin\n
             - Whois\n
             - Gmail\n
-            - isgd (Shortlink)"
+            - isgd (Shortlink)
 
-    node: 
-      name: "facebook"
+  - node:
+      name: facebook
       text: >
-        "Vous pouvez tenter de trouver le profil d\'un utilisateur de facebook,  en 
+        Vous pouvez tenter de trouver le profil d'un utilisateur de facebook,  en
         tapant son prénom et son nom. \n\n
         1. Connexion avec un autre compte
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^1$",
-          dest: "fbaccount"
-        ],
-        [
-          regex: "(?i)^jeff hawkins$|^hawkins jeff$",
-          dest: "fb:jeffhawkins"
-        ],
-        [
-          regex: "(?i)^allan kopinsky$|^kopinsky allan$",
-          dest: "fb:prive"
-        ],
-        [
-          regex: "(?i)^allo[i|ï]s hawkins$|^hawkins allo[i|ï]s$",
-          dest: "fb:prive"
-        ],
-        [
-          regex: "(?i)^ethan hawkins$|^hawkins ethan$",
-          dest: "fb:prive"
-        ],
-        [
-          regex: "(?i)^joe albertson$|^albertson joe$",
-          dest: "fb:prive"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "search"
-        ]
-      ]
-    
-    node: 
-      name: "fbaccount"
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^1$
+          dest: fbaccount
+        - regex: (?i)^jeff hawkins$|^hawkins jeff$
+          dest: fb:jeffhawkins
+        - regex: (?i)^allan kopinsky$|^kopinsky allan$
+          dest: fb:prive
+        - regex: (?i)^alloi|ïs hawkins$|^hawkins allo[i|ï]s$
+          dest: fb:prive
+        - regex: (?i)^ethan hawkins$|^hawkins ethan$
+          dest: fb:prive
+        - regex: (?i)^joe albertson$|^albertson joe$
+          dest: fb:prive
+        - regex: (?i)^B$
+          dest: search
+ 
+  - node:
+      name: fbaccount
       text: >
-        
-        "Connexion à facebook, veuillez entrer votre identifiant :\n\n
-        
+       
+        Connexion à facebook, veuillez entrer votre identifiant :\n\n
+       
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^eternalHawk$|^eternalhawk@gmail\.com$",
-          dest:"fbpw"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "facebook"
-        ]
-      ]
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^eternalHawk$|^eternalhawk@gmail\\.com$
+          dest: fbpw
+        - regex: (?i)^B$
+          dest: facebook
 
-    node: 
-      name: "fbpw"
+  - node:
+      name: fbpw
       text: >
-        "Connexion à facebook, veuillez entrer votre mot de passe :\n\n
-        
+        Connexion à facebook, veuillez entrer votre mot de passe :\n\n
+       
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "^ahChom0e\i$",
-          dest:"fb:asjh"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "facebook"
-        ]
-      ]
+        B : Revenir en arrière
+      engine:
+        - regex: ^ahChom0e\\i$
+          dest: fb:asjh
+        - regex: (?i)^B$
+          dest: facebook
 
-    node:
-      name: "linkedin"
+  - node:
+      name: linkedin
       text: >
-        "Vous pouvez tenter de trouver le profil d\'un utilisateur de linkedin en 
+        Vous pouvez tenter de trouver le profil d'un utilisateur de linkedin en
         tapant son prénom et son nom.
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^jeff hawkins$|^hawkins jeff$",
-          dest: "ln:jeffhawkins"
-        ],
-        [
-          regex: "(?i)^allan kopinsky$|^kopinsky allan$",
-          dest: "ln:allankopinsky"
-        ],
-        [
-          regex: "(?i)^allo[i|ï]s hawkins$|^hawkins allo[i|ï]s$",
-          dest: "ln:alloishawkins"
-        ],
-        [
-          regex: "(?i)^ethan hawkins$|^hawkins ethan$",
-          dest: "ln:ethanhawkins"
-        ],
-        [
-          regex: "(?i)^joe albertson$|^albertson joe$",
-          dest: "ln:joealbertson"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "search"
-        ]
-      ]
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^jeff hawkins$|^hawkins jeff$
+          dest: ln:jeffhawkins
+        - regex: (?i)^allan kopinsky$|^kopinsky allan$
+          dest: ln:allankopinsky
+        - regex: (?i)^alloi|ïs hawkins$|^hawkins allo[i|ï]s$
+          dest: ln:alloishawkins
+        - regex: (?i)^ethan hawkins$|^hawkins ethan$
+          dest: ln:ethanhawkins
+        - regex: (?i)^joe albertson$|^albertson joe$
+          dest: ln:joealbertson
+        - regex: (?i)^B$
+          dest: search
 
-    node:
-      name: "whois"
+  - node:
+      name: whois
       text: >
-        "Ce service vous permet d\'obtenir des informations sur un nom de domaine.\n
+        Ce service vous permet d'obtenir des informations sur un nom de domaine.\n
         Entrez un nom de domaine : \n\n
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^(www\.)?pharmacrap\.com$",
-          dest: "who:pharmacrap"
-        ],
-        [
-          regex: "(?i)^(www\.)?cyber-tag.net$",
-          dest: "who:cybertag"
-        ],
-        [
-          regex: "(?i)^hawkins.me$",
-          dest: "who:hawkins"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "search"
-        ]
-      ]
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^(www\\.)?pharmacrap\\.com$
+          dest: who:pharmacrap
+        - regex: (?i)^(www\\.)?cyber-tag.net$
+          dest: who:cybertag
+        - regex: (?i)^hawkins.me$
+          dest: who:hawkins
+        - regex: (?i)^B$
+          dest: search
 
-    node:
-      name: "gmail"
+  - node:
+      name: gmail
       text: >
-        "Connexion à gmail.com, veuillez entrer votre identifiant :\n\n
-        1. Créer un compte 
+        Connexion à gmail.com, veuillez entrer votre identifiant :\n\n
+        1. Créer un compte
         2. Mot de passe oublié
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^1$",
-          dest: "gmcreate"
-        ],
-        [
-          regex: "(?i)^2$",
-          dest: "gmrecover"
-        ],
-        [
-          regex: "(?i)^eternalHawk$|^eternalhawk@gmail\.com$",
-          dest:"gmpw"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "search"
-        ]
-      ]
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^1$
+          dest: gmcreate
+        - regex: (?i)^2$
+          dest: gmrecover
+        - regex: (?i)^eternalHawk$|^eternalhawk@gmail\\.com$
+          dest: gmpw
+        - regex: (?i)^B$
+          dest: search
 
-    node:
-      name: "gmpw"
+  - node:
+      name: gmpw
       text: >
-        "Connexion à gmail, veuillez entrer votre mot de passe :\n\n
-        
+        Connexion à gmail, veuillez entrer votre mot de passe :\n\n
+       
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "^ahchom0e\i$",
-          dest:"gm:asjh"
-        ],
-        [
-          regex: "(?i)^b$",
-          dest: "gmail"
-        ]
-      ]
-        
-    node:
-      name: "isgd"
+        B : Revenir en arrière
+      engine:
+        - regex: ^ahchom0e\\i$
+          dest: gm:asjh
+        - regex: (?i)^b$
+          dest: gmail
+       
+  - node:
+      name: isgd
       text: >
-        "Bienvenue sur is.gd ! \n Entrez une URL à raccourcir : \n\n
+        Bienvenue sur is.gd ! \n Entrez une URL à raccourcir : \n\n
         * : Utilisez vos connaissances\n
-        B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^(http://)?(www.)?f--acebook.com/login.php$",
-          dest:"isgd:fakefb"
-        ],
-        [
-          regex: "(?i)^b$",
-          dest: "search"
-        ]
-      ]
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^(http://)?(www.)?f--acebook.com/login.php$
+          dest: isgd:fakefb
+        - regex: (?i)^b$
+          dest: search
 
-    node: 
-    name: "isgd:fakefb"
+  - node:
+      name: isgd:fakefb
       text: >
-        "L\'URL raccourcie de https://f--acebook.com/login.php https://is.gd/jrl128"
+        L'URL raccourcie de https://f--acebook.com/login.php https://is.gd/jrl128
 
-    node: 
-      name: "pharmacrap"
+  - node:
+      name: pharmacrap
       text: >
-        "L\'adresse du site est www.pharmacrap.com. \n\n\nInclude website there"
+        L'adresse du site est www.pharmacrap.com. \n\n\nInclude website there
 
-    node:
-      name: "lasertag"
+  - node:
+      name: lasertag
       text: >
-        "L\'adresse du site est www.cyber-tag.net \n\n\nInclude website there"
+        L'adresse du site est www.cyber-tag.net \n\n\nInclude website there
 
-    node:
-      name: "who:pharmacrap"
+  - node:
+      name: who:pharmacrap
       text: >
-        "Le résultat de la recherche whois est le suivant : \n Include whois there"
-    
-    node:
-      name: "who:cybertag"
+        Le résultat de la recherche whois est le suivant : \n Include whois there
+ 
+  - node:
+      name: who:cybertag
       text: >
-        "Le résultat de la recherche whois est le suivant : \n Include whois there"
+        Le résultat de la recherche whois est le suivant : \n Include whois there
 
-    node: 
-      name: "fb:jeffhawkins"
+  - node:
+      name: fb:jeffhawkins
       text: >
-        "Les informations extraites du profil facebook de Jeff Hawkins :\n\n 
-        Situation familialle \: Il est marié avec Alloïs Hawkins et a un fils de 
-        11 ans Ethan.\n\n 
+        Les informations extraites du profil facebook de Jeff Hawkins :\n\n
+        Situation familialle \: Il est marié avec Alloïs Hawkins et a un fils de
+        11 ans Ethan.\n\n
 
         Hobbies \: Adepte de LaserGame, il partage et like tous les évènements de
         la société de LaserGame, Cyber Tag.
-        Son mur est visible uniquement par ses amis mais l\'on peut voir une photo\n 
-        de banière publique avec un score de partie de LaserGame. 
-        On peut voir les pseudos de son équipe sur l\'image :\n
+        Son mur est visible uniquement par ses amis mais l'on peut voir une photo\n
+        de banière publique avec un score de partie de LaserGame.
+        On peut voir les pseudos de son équipe sur l'image :\n
           MrMeeseeks: 5600 pts, \n
           eternalHawk : 8700 pts, \n
           Kopix: 8600 pts, \n
           FlashB4ng: 4600 pts, \n
           purpletag: 7100 pts\n
-        On trouve un commentaire de Allan Kopinsky sous la photo : Ahah, battu de 
-        100 points, t\'auras pas autant de chance samedi prochain :p.\n\n
-        
-        Lectures \: Il est fan de science fiction de d\'heroïc fantasy, la saga du
+        On trouve un commentaire de Allan Kopinsky sous la photo : Ahah, battu de
+        100 points, t'auras pas autant de chance samedi prochain :p.\n\n
+       
+        Lectures \: Il est fan de science fiction de d'heroïc fantasy, la saga du
         disque-monde, les romans de Tolkien et JRR. Martin, ainsi que les oeuvres
-        sur l\'univers warcraft.
+        sur l'univers warcraft.
 
-        Musique \: Il écoute du jazz et du blues. Il aprécie également les 
+        Musique \: Il écoute du jazz et du blues. Il aprécie également les
         compositeur de BO de films Hans Zimmer, Howard Shore et John Williams.
-        "
-    
-    node:
-      name: "fb:asjh"
-        text: >
-          "Vous êtes connecté sur facebook avec le compte de Jeff Hawkins...\n\n
-          
-          Vous pouvez tenter de trouver le profil d\'un utilisateur de facebook,  en\n 
+       
+ 
+  - node:
+      name: fb:asjh
+      text: >
+          Vous êtes connecté sur facebook avec le compte de Jeff Hawkins...\n\n
+         
+          Vous pouvez tenter de trouver le profil d'un utilisateur de facebook,  en\n
            tapant son prénom et son nom. \n\n
           * : Utilisez vos connaissances\n
-          B : Vous déconnecter"
-      engine:[
-        [
-          regex: "(?i)^jeff hawkins$|^hawkins jeff$",
-          dest: "fb:jeffhawkins"
-        ],
-        [
-          regex: "(?i)^allan kopinsky$|^kopinsky allan$",
-          dest: "fb:allankopinsky"
-        ],
-        [
-          regex: "(?i)^allo[i|ï]s hawkins$|^hawkins allo[i|ï]s$",
-          dest: "fb:alloishawkins"
-        ],
-        [
-          regex: "(?i)^ethan hawkins$|^hawkins ethan$",
-          dest: "fb:ethanhawkins"
-        ],
-        [
-          regex: "(?i)^joe albertson$|^albertson joe$",
-          dest: "fb:prive"
-        ],
-        [
-          regex: "(?i)^B$",
-          dest: "facebook"
-        ]
-      ]
-          
+          B : Vous déconnecter
+      engine:
+        - regex: (?i)^jeff hawkins$|^hawkins jeff$
+          dest: fb:jeffhawkins
+        - regex: (?i)^allan kopinsky$|^kopinsky allan$
+          dest: fb:allankopinsky
+        - regex: (?i)^alloi|ïs hawkins$|^hawkins allo[i|ï]s$
+          dest: fb:alloishawkins
+        - regex: (?i)^ethan hawkins$|^hawkins ethan$
+          dest: fb:ethanhawkins
+        - regex: (?i)^joe albertson$|^albertson joe$
+          dest: fb:prive
+        - regex: (?i)^B$
+          dest: facebook
+         
 
-    node: 
-      name: "ln:jeffhawkins"
+  - node:
+      name: ln:jeffhawkins
       text: >
-        "Vous voyez que Jeff Hawkins est actuelement administrateur système, web et 
+        Vous voyez que Jeff Hawkins est actuelement administrateur système, web et
         réseau chez PharmaCrap.
         A partir de son CV vous obtenez : \n
           - son numéro de portable : +1 505 319 4098\n
           - son adresse e-mail perso: jeff@hawkins.me
-        "
+       
 
-    node:
-      name: "gm:asjh"
+  - node:
+      name: gm:asjh
       text: >
-          "Vous êtes connecté sur gmail avec le compte de Jeff Hawkins...\n\n
-          
+          Vous êtes connecté sur gmail avec le compte de Jeff Hawkins...\n\n
+         
           Voici la liste des 5 derniers e-mails \: \n
           1-
           2-
@@ -436,266 +324,231 @@
           4-
           5-
           * : Utilisez vos connaissances\n
-          B : Vous déconnecter"
-    
-    node:
-      name: "fb:allankopinsky"
+          B : Vous déconnecter
+ 
+  - node:
+      name: fb:allankopinsky
       text: >
-        "Allan Kopinsky est célibataire, il est fan de jeux vidéos et de mangas.
-        Il est assez peu actif sur facebook son dernier post remonte à il y a un an 
-        lorsqu\'il annonce son déménagement vers Seattle pour le travail"
+        Allan Kopinsky est célibataire, il est fan de jeux vidéos et de mangas.
+        Il est assez peu actif sur facebook son dernier post remonte à il y a un an
+        lorsqu'il annonce son déménagement vers Seattle pour le travail
 
-    node:
-      name: "ln:allankopinsky"
+  - node:
+      name: ln:allankopinsky
       text: >
-        "Allan Kopinsky est un scientifique du département R&D chez Pharamacrap, il a 
-        fait une thèse en génétique et publie régulièrement ses travaux sur l\'étude 
-        des mutation génétiques de virus pandémiques. Ses dernières recherches portent 
+        Allan Kopinsky est un scientifique du département R&D chez Pharamacrap, il a
+        fait une thèse en génétique et publie régulièrement ses travaux sur l'étude
+        des mutation génétiques de virus pandémiques. Ses dernières recherches portent
         sur le virus Ebola qui a sévi en Afrique.
-        
-        Les travaux sur des souches virales extrèmement pathogènes comme Ebola ne 
-        peuvent être conduit que dans des laboratoires P4 donc en dehors des grandes 
+       
+        Les travaux sur des souches virales extrèmement pathogènes comme Ebola ne
+        peuvent être conduit que dans des laboratoires P4 donc en dehors des grandes
         agglomérations.
 
         A partir de son CV vous obtenez :
-          - son adresse personnelle :  4701 20th Ave NE Seattle, WA 98105  
-          - son numéro de portable : 707-765-3098"
+          - son adresse personnelle :  4701 20th Ave NE Seattle, WA 98105 
+          - son numéro de portable : 707-765-3098
 
-    node:
-      name: "fb:prive"
-      text: > 
-        "Le profil de cet utilisateur est privé, vous devez faire partie de son \n
-        cercle d\'amis pour accéder à ses informations et son mur"
+  - node:
+      name: fb:prive
+      text: >
+        Le profil de cet utilisateur est privé, vous devez faire partie de son \n
+        cercle d'amis pour accéder à ses informations et son mur
 
-    node:
-      name: "set"
-      text: >" 
-        .M\"\"\"bgd `7MM\"\"\"YMM MMP\"\"MM\"\"YMM\n
-        ,MI    \"Y   MM    `7 P\'   MM   `7\n
-        `MMb.       MM   d        MM\n
-          `YMMNq.   MMmmMM        MM\n
+  - node:
+      name: set
+      text: >
+        >
+          .M"""bgd `7MM"""YMM MMP""MM""YMM
+        ,MI    "Y   MM    `7 P'   MM   `7\n
+        `MMb.       MM   d        MM
+          `YMMNq.    MMmmMM        MM
         .     `MM   MM   Y  ,     MM\n
         Mb     dM   MM     ,M     MM\n
-        P\"Ybmmd\"  .JMMmmmmMMM   .JMML.\n\n
+        P"Ybmmd"  .JMMmmmmMMM   .JMML.
 
-[---]        The Social-Engineer Toolkit (SET)         [---]\n
-[---]        Created by: David Kennedy (ReL1K)         [---]\n
+
+        [---]         The Social-Engineer Toolkit (SET)         [---]\n
+        [---]         Created by: David Kennedy (ReL1K)         [---]\n
                       Version: 7.7.5\n
-                   Codename: \'Blackout\'\n
-[---]        Follow us on Twitter: @TrustedSec         [---]\n
-[---]        Follow me on Twitter: @HackingDave        [---]\n
-[---]       Homepage: https://www.trustedsec.com       [---]\n
+                   Codename: 'Blackout'\n
+        [---]        Follow us on Twitter: @TrustedSec         [---]\n
+        [---]        Follow me on Twitter: @HackingDave        [---]\n
+        [---]      Homepage: https://www.trustedsec.com        [---]\n
         Welcome to the Social-Engineer Toolkit (SET).\n
-         The one stop shop for all of your SE needs.\n\n
+        The one stop shop for all of your SE needs.\n
 
-     Join us on irc.freenode.net in channel #setoolkit\n\n
+        Join us on irc.freenode.net in channel #setoolkit\n
 
-   The Social-Engineer Toolkit is a product of TrustedSec.\n\n
+        The Social-Engineer Toolkit is a product of TrustedSec.\n
 
-           Visit: https://www.trustedsec.com\n\n
+           Visit: https://www.trustedsec.com\n
 
-   It\'s easy to update using the PenTesters Framework! (PTF)\n
-Visit https://github.com/trustedsec/ptf to update all your tools!\n\n
+        It's easy to update using the PenTesters Framework! (PTF)\n
+        Visit https://github.com/trustedsec/ptf to update all your tools!\n
 
           1. Social-Engineering Attacks\n
           B : Quitter SET
-        "
-      engine:[
-        [
-          regex: "(?i)^1$",
-          dest:"set:se"
-        ],
-        [
-          regex: "(?i)^b$",
-          dest: "pc"
-        ]
-      ]
+       
+      engine:
+        - regex: (?i)^1$
+          dest: set:se
+        - regex: (?i)^b$
+          dest: pc
 
-      node:
-        name: "set:se"
-        text: >
-          "Select from menu : \n\n
-          1. Spear-phishing Attack Vectors\n
-          2. Website attack vectors\n
-          B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^1$",
-          dest:"set:sp"
-        ],
-        [
-          regex: "(?i)^2$",
-          dest:"set:web"
-        ],
-        [
-          regex: "(?i)^b$",
-          dest: "set"
-        ]
-      ]
+  - node:
+      name: set:se
+      text: >
+        Select from menu : \n\n
+        1. Spear-phishing Attack Vectors\n
+        2. Website attack vectors\n
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^1$
+          dest: set:sp
+        - regex: (?i)^2$
+          dest: set:web
+        - regex: (?i)^b$
+          dest: set
 
-      node: 
-        name: "set:sp"
-        text: >
-          "The Spearphishing module allows you to specially craft email messages and send\n
-          them to a large (or small) number of people with attached fileformat malicious\n
-          payloads. If you want to spoof your email address, be sure \"Sendmail\" is in-\n
-          stalled (apt-get install sendmail) and change the config/set_config SENDMAIL=OFF\n
-          flag to SENDMAIL=ON.\n\n
+  - node:
+      name: set:sp
+      text: >
+        The Spearphishing module allows you to specially craft email messages and send\n
+        them to a large (or small) number of people with attached fileformat malicious\n
+        payloads. If you want to spoof your email address, be sure \Sendmail\ is in-\n
+        stalled (apt-get install sendmail) and change the config/set_config SENDMAIL=OFF\n
+        flag to SENDMAIL=ON.\n\n
 
-          Entrez un thème pour écrire un email de spearphishing adapté.\n\n
-        
-          * : Utilisez vos connaissances\n
-          B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^laser(tag|game)?$|^cybertag$|^cyber tag$",
-          dest:"set:splaser"
-        ],
-        [
-          regex: "(?i)^b$",
-          dest: "set:se"
-        ]
-      ]
+        Entrez un thème pour écrire un email de spearphishing adapté.\n\n
+     
+        * : Utilisez vos connaissances\n
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^laser(tag|game)?$|^cybertag$|^cyber tag$
+          dest: set:splaser
+        - regex: (?i)^b$
+          dest: set:se
 
-      node:
-        name: "set:splaser"
-        text: >
-          "Sujet: Tournois de LaserGame à Seattle\n
-          Corps\: Bonjour Jeff,\n
-          l\'équipe du CyberTag a l\'immense plaisir d'organiser un grand tournois de \n
-          Lasergame entre les meilleurs combatants de l\'état de Washington. 
-          Ce tournois aura lieu le Samedi 7 Mars 2018 sur notre terrain habituel au \n
-          coeur de Seattle. \n\n
+  - node:
+      name: set:splaser
+      text: >
+        Sujet: Tournois de LaserGame à Seattle\n
+        Corps\: Bonjour Jeff,\n
+        l'équipe du CyberTag a l'immense plaisir d'organiser un grand tournois de \n
+        Lasergame entre les meilleurs combatants de l'état de Washington.
+        Ce tournois aura lieu le Samedi 7 Mars 2018 sur notre terrain habituel au \n
+        coeur de Seattle. \n\n
 
-          Nous avons tout de suite pensé à toi pour participer puisque tu culmine \n
-          dans le top 3 au tableau des scores de notre salle.\n\n
+        Nous avons tout de suite pensé à toi pour participer puisque tu culmine \n
+        dans le top 3 au tableau des scores de notre salle.\n\n
 
-          Le grand vaiqueur de ce tournois amateur empochera la somme de 3000$ et\n 
-          se verra offrir un abonnement de 1 an à notre salle en libre accès.\n\n
+        Le grand vaiqueur de ce tournois amateur empochera la somme de 3000$ et\n
+        se verra offrir un abonnement de 1 an à notre salle en libre accès.\n\n
 
-          Pour l\'instant le formulaire d'inscription n'est pas encore en ligne, \n
-          mais je t\'invite à participer à l'évènement sur facebook et à partager \n
-          auprès de tes amis.\n\n
+        Pour l'instant le formulaire d'inscription n'est pas encore en ligne, \n
+        mais je t'invite à participer à l'évènement sur facebook et à partager \n
+        auprès de tes amis.\n\n
 
-          <Lien vers l\'évènement facebook>\n\n
+        <Lien vers l'évènement facebook>\n\n
 
-          En esperant te voir participer,\n
-          Amicalement, \n
-          Joe Albertson\n
-          Gérant du Cybertag\n\n
+        En esperant te voir participer,\n
+        Amicalement, \n
+        Joe Albertson\n
+        Gérant du Cybertag\n\n
 
-          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n
-          
-          Veuillez completer l\'e-mail avec l'adresse vers laquelle doit pointer le \n
-          lien vers l\'évènement facebook :
-          "
-      engine:[
-        [
-          regex: "(?i)^https://is\.gd/jrl128$",
-          dest:"set:chresp"
-        ],
-        [
-          regex: "(?i)^(http(s)?://)?f--acebook\.com(/login\.php)?$",
-          dest:"set:shorten"
-        ],
-        [
-          regex: "(?i)^b$",
-          dest: "set"
-        ]
-      ]
-            
-      node:
-        name: "set:shorten"
-        text: >
-        "Il serait plus judicieux de masquer l\'url avec un URL shortener\n
-        ou un faux bouton partager. La première option reste la plus simple"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n
+       
+        Veuillez completer l'e-mail avec l'adresse vers laquelle doit pointer le \n
+        lien vers l'évènement facebook :
+       
+      engine:
+        - regex: (?i)^https://is\\.gd/jrl128$
+          dest: set:chresp
+        - regex: (?i)^(http(s)?://)?f--acebook\\.com(/login\\.php)?$
+          dest: set:shorten
+        - regex: (?i)^b$
+          dest: set
+         
+  - node:
+      name: set:shorten
+      text: >
+        Il serait plus judicieux de masquer l'url avec un URL shortener\n
+        ou un faux bouton partager. La première option reste la plus simple
 
-      node:
-        name: "set:web"
-        text: >
-          "The Credential Harvester method will utilize web\n 
-          cloning of a web-site that has a username and password\n
-          field and harvest all the information posted to the\n 
-          website.\n\n
-          
-          1. Credential Harvester Attack Method\n
-          B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^1$",
-          dest:"set:ch"
-        ],
-        [
-          regex: "(?i)^b$",
-          dest: "set"
-        ]
-      ]
+  - node:
+      name: set:web
+      text: >
+        The Credential Harvester method will utilize web\n
+        cloning of a web-site that has a username and password\n
+        field and harvest all the information posted to the\n
+        website.\n\n
+       
+        1. Credential Harvester Attack Method\n
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^1$
+          dest: set:ch
+        - regex: (?i)^b$
+          dest: set
 
-      node:
-        name: "set:ch"
-        text: >
-          "IP address for the POST back in Harvester : 146.126.6.223\n
-          Enter the url to clone : \n\n
-          
-          * : Utilisez vos connaissances\n
-          B : Revenir en arrière"
-      engine:[
-        [
-          regex: "(?i)^(http(s)://)?(www\.)?facebook.com(/login\.php)?$",
-          dest:"set:chok"
-        ],
-        [
-          regex: "(?i)^(http(s)?://)?(www\.)?gmail\.com(/login\.php)?$",
-          dest: "set:chnok"
-        ]
-        [
-          regex: "(?i)^b$",
-          dest: "set"
-        ]
-      ]
+  - node:
+      name: set:ch
+      text: >
+        IP address for the POST back in Harvester : 146.126.6.223\n
+        Enter the url to clone : \n\n
+       
+        * : Utilisez vos connaissances\n
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^(http(s)://)?(www\\.)?facebook\\.com(/login\\.php)?$
+          dest: set:chok
+        - regex: (?i)^(http(s)?://)?(www\\.)?gmail\\.com(/login\\.php)?$
+          dest: set:chnok
+        - regex: (?i)^b$
+          dest: set
 
-      node:
-        name: "set:chnok"
-        text: >
-        "Tenter de récolter les identifiant du compte Google est une bonne \n
+  - node:
+      name: set:chnok
+      text: >
+        Tenter de récolter les identifiant du compte Google est une bonne \n
         idée, mais il sera plus simple de forger un clone de facebook sur \n
         lequel on fera entrer les identifiants de la cible, de plus il y a \n
         fort à parier que ces identifiants soient les même sur Facebook et \n
-        Google "
+        Google
 
-      node:
-        name: "set:chok"
-        text: >
-          "
+  - node:
+      name: set:chok
+      text: >
+       
           Vous vous êtes arrangé pour avoir un serveur avec une ip publique et\n
-          le nom de domaine f--acebook.com ainsi qu\'un certificat SSL\n 
-          Let\'s Encypt valide pour ce nom de domaine.\n\n
+          le nom de domaine f--acebook.com ainsi qu'un certificat SSL\n
+          Let's Encypt valide pour ce nom de domaine.\n\n
 
           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n
-          [*] Cloning the website: https://login.facebook.com/login.php\n
-          [*] This could take a little bit...\n\n
-          
+          * Cloning the website: https://login.facebook.com/login.php\n
+          * This could take a little bit...\n\n
+         
           The best way to use this attack is if username and password form\n
           fields are available. Regardless, this captures all POSTs on a website.\n
-          [*] The Social-Engineer Toolkit Credential Harvester Attack\n
-          [*] Credential Harvester is running on port 80\n
-          [*] Information will be displayed to you as it arrives below:\n
+          * The Social-Engineer Toolkit Credential Harvester Attack\n
+          * Credential Harvester is running on port 80\n
+          * Information will be displayed to you as it arrives below:\n
           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n
 
-          Vous maintenez le serveur ouvert en attandant d\'aller envoyer un email\n
-          de phishing à votre victime."
+          Vous maintenez le serveur ouvert en attandant d'aller envoyer un email\n
+          de phishing à votre victime.
+     
+  - node:
+      name: set:chresp
+      text: >
+         
+          Vous attendez quelques heures et soudain le graal vient à vous :
         
-      node:
-        name: "set:chresp"
-        text: >
-            "
-        Vous attendez quelques heures et soudain le graal vient à vous : 
-
-
           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n
-          146.126.6.223 - - [09/Mar/2018 16:02:04] "GET / HTTP/1.1" 200 -\n\n
+          146.126.6.223 - - 09/Mar/2018 16:02:04 "GET / HTTP/1.1" 200 -\n\n
 
-          [*] WE GOT A HIT! Printing the output:\n
+          * WE GOT A HIT! Printing the output:\n
           PARAM: lsd=AVqKVeuV\n
           PARAM: display=\n
           PARAM: enable_profile_selector=\n
@@ -711,7 +564,7 @@ Visit https://github.com/trustedsec/ptf to update all your tools!\n\n
           PARAM: lgnrnd=070146_ZYa_\n
           PARAM: lgnjs=1518015725\n
           POSSIBLE USERNAME FIELD FOUND: email=eternalhawk@gmail.com\n
-          POSSIBLE PASSWORD FIELD FOUND: pass=ahChom0e\i \n
+          POSSIBLE PASSWORD FIELD FOUND: pass=ahChom0e\\i \n
           PARAM: prefill_contact_point=\n
           PARAM: prefill_source=\n
           PARAM: prefill_type=\n
@@ -719,7 +572,7 @@ Visit https://github.com/trustedsec/ptf to update all your tools!\n\n
           PARAM: first_prefill_type=\n
           PARAM: had_cp_prefilled=false\n
           POSSIBLE PASSWORD FIELD FOUND: had_password_prefilled=false\n
-          [*] WHEN YOU\'RE FINISHED, HIT CONTROL-C TO GENERATE A REPORT.\n
+          * WHEN YOU'RE FINISHED, HIT CONTROL-C TO GENERATE A REPORT.\n
           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n
-          
+         
           "
