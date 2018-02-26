@@ -113,19 +113,19 @@ func handleClient(conn net.Conn) {
 			return
 		}
 
+		// Definition du timeout
+		conn.SetReadDeadline(time.Now().Add(timeout))
+
+		// Lecture de l'entrée utilisateur en TCP jusqu'au premier "\n"
+		userInput, err := bufReader.ReadBytes('\n')
+		if err != nil {
+			//LOG
+			fmt.Println(err)
+			return
+		}
+		userInput = userInput[:len(userInput)-1]
+
 		if len(regex) != 0 {
-			// Definition du timeout
-			conn.SetReadDeadline(time.Now().Add(timeout))
-
-			// Lecture de l'entrée utilisateur en TCP jusqu'au premier "\n"
-			userInput, err := bufReader.ReadBytes('\n')
-			if err != nil {
-				//LOG
-				fmt.Println(err)
-				return
-			}
-			userInput = userInput[:len(userInput)-1]
-
 			// Analyse de la structure regex
 			for _, v := range regex {
 				match, err := regexp.Match(v.regex, userInput)
