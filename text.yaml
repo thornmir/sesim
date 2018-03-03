@@ -982,18 +982,18 @@ nodes:
     name: place:ascprog
       text: >
         Vous prennez l'ascenseur jusqu'au 17ème étage, vous arrivez dans une 
-        pièce avec un grand miroir et un homme grand et brun vous attends. Vous
-        reconnaissez Allan Kopinsky d'après sa photo de profil vue sur le post 
-        facebook de Jeff Hawkins.\n
-
-        - Bonjour Monsieur, on va s'occuper de vous dans un instant, je vous 
-        offre un café ?
+        pièce avec un grand miroir et un homme grand et brun vous attends.\n
+        - Bonjour Monsieur, je suis M. Violett et je m'occupe du programme 
+          de volontaires on va s'occuper de vous dans un instant, je vous 
+          offre un café ?\n\n
 
         Vous aquiecez et le suivez derrière une porte avec un accès controllé 
         par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
         à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
         Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
         Informatique, Allan Kopinsky Responsable R&D, Salle de repos ...\n
+        En entrant dans la salle de repos vous ne parvenez pas à lire les 
+        écritaux des trois dernières portes.
         
 
 
@@ -1011,11 +1011,17 @@ nodes:
       en juger par les traces d'usure sur la poignée. Il y a un lecteur de badge et vous 
       ne pouvez rien faire pour ouvrir l'accès.  
 
+      En jettant un oeil autour de vous vous remarquez les portes de escalier et une 
+      porte avec le symbole de toilettes dessus.
+
+      En attendant quelques minutes vous croisez un employé qui sort des bureaux. 
+      Vous lui expliquez que vous êtes nouveau et que vous avez oublié votre badge 
+      sur votre bureau avant d'aller aux toilettes. 
+      Il vous tient gracieusement la porte pour que vous rentriez.
+
       engine:
-        - regex: (?i)^1$
-          dest: place:
-        - regex: (?i)^2$
-          dest: place:employe
+        - regex: .*
+          dest: place:couloir1
 
   - node: 
     name: place:17:hawkins
@@ -1047,7 +1053,7 @@ nodes:
       par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
       à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
       Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
-      Informatique, Allan Kopinsky Responsable R&D, Salle de repos ...\n
+      Informatique, Allan Kopinsky Responsabhttp://newandroidbook.com/code/android-5.1.1_r24/external/regex-re2/doc/syntax.htmlle R&D, Salle de repos ...\n
       En passant devant le bureau de la comptabilité il se retourne vers vous :\n
         - Au fait moi c'est Vaughn, de la compta. \n
       A ce moment on entend le téléphone dans son bureau sonner.\n 
@@ -1058,10 +1064,10 @@ nodes:
 
       engine:
         - regex: .*
-          dest: 
+          dest: place:couloir1
   
   - node: 
-    name: place:17:prog
+    name: place:couloir1
       text: >
       
 
