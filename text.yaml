@@ -11,7 +11,7 @@ nodes:
         les recherches, prochains produits et savoir-faire de la cible.\n\n
         ~~~~~~~~~~\n
         Dans cette simulation, à chaque nouvelle page plusieurs choix vous sont proposés
-        avec un numéro. Entrer ce numéro vous fait progreser vers une nouvelle situation.
+        avec un chiffre. Entrer ce chiffre vous fait progreser vers une nouvelle situation.
         Lorsque vous avez la possibilité de revenir en arrière une possibilité
         supplémentaire est affichée et correspond au caractère 'B' pour "back".
         Le but de la simulation est la mise en situation réelle, qui passe
@@ -50,8 +50,6 @@ nodes:
         - regex: (?i)^B$
           dest: start
        
-     
-
   - node:
       name: search
       text: >
@@ -184,18 +182,36 @@ nodes:
       text: >
         Connexion à gmail.com, veuillez entrer votre identifiant :\n\n
         1. Créer un compte
-        2. Mot de passe oublié
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
         - regex: (?i)^1$
           dest: gmcreate
-        - regex: (?i)^2$
-          dest: gmrecover
-        - regex: (?i)^eternalHawk$|^eternalhawk@gmail\.com$
+        - regex: (?i)^eternalhawk$|^eternalhawk@gmail\.com$
           dest: gmpw
         - regex: (?i)^B$
           dest: search
+
+  - node:
+      name: gmcreate
+      text: >
+        Création d'un nouveau compte gmail. \n
+        Veuillez entrer l'indetifiant de votre nouvelle adresse mail. \n
+        ~~ Cette page vous permet de véfifier si une adresse email existe ou
+        non.
+       
+        * : Utilisez vos connaissances\n
+        B : Revenir en arrière
+      engine:
+        - regex: (?i)^eternalhawk$|^eternalhawk@gmail\.com$
+          dest: gm:ok
+        - regex: (?i)^b$
+          dest: gmail
+  
+  - node:
+      name: gmok
+      text: >
+      L'adresse eternalhawk@gmail est déjà prise. 
 
   - node:
       name: gmpw
@@ -245,14 +261,15 @@ nodes:
         de nos vaccins et anti-dépresseurs. Prévoir une semaine, la rémunération est 
         de 20 000 $ pour le séjour. 
         Nous nous réservons le droit d'accepter ou refuser tout nouveau testeur.
-        Rendez-vous sur volontaires.pharmacrap.com pour remplir le formulaire.
+        Téléchargez le formulaire et rendez vous au siege social à Seattle.
         
         
         PharmaCrap Inc.\n
         805 5th Ave. | Seattle Washington 53105\n
         Tel: 734-402-4000 | Fax: 734-402-9150\n\n
         
-        © PharmaCrap Incorporated. Tous droits réservés. PharmaCrap est une marque déposée. 
+        © PharmaCrap Incorporated. Tous droits réservés. PharmaCrap est une marque 
+        déposée. 
 
   - node:
       name: lasertag
@@ -496,8 +513,7 @@ nodes:
         Vous voyez que Jeff Hawkins est actuellement administrateur système, web et
         réseau chez PharmaCrap.
         A partir de son CV vous obtenez : \n
-          - son numéro de portable : +1 505 319 4098\n
-          - son adresse e-mail perso: jeff@hawkins.me
+          - son adresse e-mail p: jeff@hawkins.me
        
 
   - node:
@@ -505,12 +521,11 @@ nodes:
       text: >
           Vous êtes connecté sur gmail avec le compte de Jeff Hawkins...\n\n
          
-          Voici la liste des 5 derniers e-mails : \n
+          Voici la liste des 3 derniers e-mails : \n
           1-
           2-
           3-
-          4-
-          5-
+
           * : Utilisez vos connaissances\n
           B : Vous déconnecter
  
@@ -526,16 +541,13 @@ nodes:
       text: >
         Allan Kopinsky est un scientifique du département R&D chez Pharamacrap, il a
         fait une thèse en génétique et publie régulièrement ses travaux sur l'étude
-        des mutation génétiques de virus pandémiques. Ses dernières recherches portent
+        des mutation génétiques de virus pandémiques. Ses derniers travaux portent
         sur le virus Ebola qui a sévi en Afrique.
        
         Les travaux sur des souches virales extrèmement pathogènes comme Ebola ne
         peuvent être conduit que dans des laboratoires situés en dehors des grandes
         agglomérations.
 
-        A partir de son CV vous obtenez :
-          - son adresse personnelle :  4701 20th Ave. NE Seattle, WA 98105 
-          - son numéro de portable : 707-765-3098
 
   - node: 
       name: fb:alloishawkins
@@ -805,47 +817,6 @@ nodes:
           * WHEN YOU'RE FINISHED, HIT CONTROL-C TO GENERATE A REPORT.\n
           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n
          
-  #- node:
-      #name: phone
-      #text: >
-        #Vous pouvez composer un numéro de téléphone au format 
-        #xxx-xxx-xxxx:\n\n
-
-        #* : Utilisez vos connaissances\n
-        #B : Revenir en arrière
-      
-      #engine:
-        #- regex: (?i)^877-271-8820$
-          #dest: ph:pcrap:adm
-        #- regex: (?i)^734-402-4000$
-          #dest: ph:pcrap:offi
-        #- regex: (?i)^505-319-4098$
-          #dest: ph:jh:port
-        #- regex: (?i)^$
-          #dest: ph:pcrap:offi
-        #- regex: (?i)^b$
-          #dest: start
-
-  #-node:
-    #name: ph:pcrap:adm
-      #text: >
-
-      #engine:
-        #- regex:
-          #dest:
-        #- regex:
-          #dest:
-
-  #-node:
-    #name: ph:pcrap:offi
-      #text: >
-      #* Robot Téléphonique * 
-      #engine:
-        #- regex:
-          #dest:
-        #- regex:
-          #dest:
- 
   - node:
       name: place
       text: >
@@ -859,10 +830,6 @@ nodes:
       engine:
         - regex: (?i)^805 5th Ave. Seattle$
           dest: place:pcraphq
-        - regex: (?i)^4701 20th Ave. NE Seattle$
-          dest: place:kopinsky
-        - regex: (?i)^Mt. Rainier$
-          dest: place:labo
         - regex: (?i)^b$
           dest: start
 
@@ -872,13 +839,13 @@ nodes:
         Vous arrivez au siège social de Pharmacrap au coeur de Seattle. C'est un 
         immeuble d'une vingtaine d'étage, il vous faudra trouver quel(s) étage(s)
         correspondent à PharmaCrap. Vous vous êtes habillé comme un business man
-        pour ne pas eveiller les soupsons. En entrant vous jetez un oeil à la 
+        pour ne pas eveiller les soupcons. En entrant vous jetez un oeil à la 
         liste des entreprises inscrite sur la vitre et vous retenez SAH Immobilier
         au cas où.\n
         Le hall de l'immeuble est occupé par quelques fauteuils et un bureau en 
         arc de cercle derrière lequel une hotesse semble occupée sur son 
         ordinateur.\n
-        La pièce se prolonge derière le bureau et vous appercevez deux ascenceur 
+        La pièce se prolonge derrière le bureau et vous appercevez deux ascenseurs 
         au fond entourés par deux cages d'escaliers.\n\n
 
         1. Vous vous adressez à l'hotesse d'accueil.
@@ -902,7 +869,7 @@ nodes:
         L'hotesse lève la tête de son ordinateur, sur son badge vous lisez Janett :\n
           - Bonjour, je peux vous aider ?
 
-        1. Oui, je recherche le siège social de Pharmacrap
+        1. Oui, je recherche le siège social de Pharmacrap.
         2. Oui, je suis là pour SAH Immobilier, à quel étage cela se trouve-t-il ? 
         B. Non merci Janett, je comptais juste rejoindre les locaux de Pharmacrap.
 
@@ -916,7 +883,7 @@ nodes:
           dest: place:aschq
 
   - node: 
-      name: place:hotess
+    name: place:hotess:pcrap
       text: >
         PharmaCrap ? C'est à quel sujet ?
 
@@ -925,7 +892,6 @@ nodes:
         2. C'est mon premier jour ici, je devais rencontrer M. Hawkins mais il m'a 
         dit de le rejoindre directement en haut. J'ai déjà mon badge.
         
-
       engine:
         - regex: (?i)^1$
           dest: place:hotess:prog
@@ -938,18 +904,18 @@ nodes:
       Ah oui le programme d'essais, attendez un instant j'appelle leurs bureaux...\n
       - Oui Victor, c'est Janett de l'accueil, j'ai ici quelqu'un qui doit 
         participer au programme de test. Oui. Nan il est tout seul. Ok je te l'envoie.
-      - Prenez ce formulaire et remplissez le, c'est au 18e étage.
+      - Prenez ce formulaire et remplissez le, c'est au 17ème étage.
 
       engine:
         - regex: .*
-          dest: place:aschq
+          dest: place:ascprog
 
   - node: 
     name: place:hotess:prem
       text: >
       Hum... M. Hawkins, il me semble que c'est au 17ème étage, c'est ce qu'il vous 
       a dit ?
-      Bien, l'ascensseur est juste là, bon courage pour le premier jour !
+      Bien, l'ascenseur est juste là, bon courage pour le premier jour !
 
       engine:
         - regex: .*
@@ -967,13 +933,140 @@ nodes:
   - node: 
     name: place:aschq
       text: >
-      Vous vous retrouvez face aux ascensseurs.\n\n
+      vous vous retrouvez face aux ascenseurs.\n\n
       
-      1. Appeller un ascensseur
-      2. Attendre qu'un employé arrive et appelle l'ascensseur
+      1. Appeller un ascenseur
+      2. Attendre qu'un employé arrive et appelle l'ascenseur
 
       engine:
         - regex: (?i)^1$
           dest: place:compose
+        - regex: (?i)^2$
+          dest: place:employe
+
+  - node: 
+    name: place:compose
+      text: >
+     L'ascenseur de droite s'ouvre. A l'interieur vous trouvez 20 boutons 
+     d'étages numéroté. Pharmacrap est indiqué sur l'étage 17.
+
+      1. Aller au 17
+      B. Attendre qu'un employé arrive et appelle l'ascenseur
+
+      engine:
+        - regex: (?i)^1$
+          dest: place:17
+        - regex: (?i)^b$
+          dest: place:employe
+
+  - node: 
+    name: place:employe
+      text: >
+      Après une attente de quelques minutes un homme habillé décontracté, appelle
+      l'ascenseur. Vous en profitez pour monter avec lui. Il appuye sur l'étage 17.\n\n
+      
+      Il vous adresse la parole : \n
+      - Vous travaillez pour PharmaCrap ? Je vous ai jamais croisé ici ?\n\n
+
+      1. C'est mon premier jour, je vais travailler avec M. Hawkins à l'informatique.
+      2. Je travaille au labo habituellement mais je dois faire un rapport aux grand
+      chef sur les derniers résultats du programme de volontaires.
+      
+      engine:
+        - regex: (?i)^1$
+          dest: place:17:hawkins
+        - regex: (?i)^2$
+          dest: place:17:prog
+  
+  - node: 
+    name: place:ascprog
+      text: >
+        Vous prennez l'ascenseur jusqu'au 17ème étage, vous arrivez dans une 
+        pièce avec un grand miroir et un homme grand et brun vous attends. Vous
+        reconnaissez Allan Kopinsky d'après sa photo de profil vue sur le post 
+        facebook de Jeff Hawkins.\n
+
+        - Bonjour Monsieur, on va s'occuper de vous dans un instant, je vous 
+        offre un café ?
+
+        Vous aquiecez et le suivez derrière une porte avec un accès controllé 
+        par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
+        à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
+        Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
+        Informatique, Allan Kopinsky Responsable R&D, Salle de repos ...\n
+        
+
+
+      engine:
+        - regex: (?i)^1$
+          dest: place:
+        - regex: (?i)^2$
+          dest: place:employe
+
+  - node: 
+    name: place:17
+      text: >
+      Vous sortez de l'ascenseur et vous vous retrouvez face à un grand miroir entouré
+      par deux portes. Seulement celle de gauche semble être utilisée régulièrement à 
+      en juger par les traces d'usure sur la poignée. Il y a un lecteur de badge et vous 
+      ne pouvez rien faire pour ouvrir l'accès.  
+
+      engine:
+        - regex: (?i)^1$
+          dest: place:
+        - regex: (?i)^2$
+          dest: place:employe
+
+  - node: 
+    name: place:17:hawkins
+      text: >
+      - Ah Hawkins, le type de l'informatique, ça m'étonne pas vu votre look j'avais 
+      cramé de loin que vous étiez un tech guy. Je vous paye un café pour le premier 
+      jour. \n\n
+      Vous aquiecez et le suivez derrière une porte avec un accès controllé 
+      par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
+      à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
+      Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
+      Informatique, Allan Kopinsky Responsable R&D, Salle de repos ...\n
+      En passant devant le bureau de la comptabilité il se retourne vers vous :\n
+        - Au fait moi c'est Vaughn, de la compta. \n
+      A ce moment on entend le téléphone dans son bureau sonner.\n 
+        - Ah merde faut que j'aille répondre désolé, tiens prends 20 cents et va te prendre 
+          un café dans la salle de repos deux portes plus loin à gauche. Le bureau 
+          de Hawkins est celui en face. On discutera une autre fois ! \n
+      engine:
+        - regex: .*
+          dest: place:couloir1
+
+  - node: 
+    name: place:17:prog
+      text: >
+      - Ah le programme, tu dois bosser avec Kopinsky il est en congé cette semaine.
+      Je te paye un café pour le premier jour. \n\n
+      Vous aquiecez et le suivez derrière une porte avec un accès controllé 
+      par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
+      à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
+      Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
+      Informatique, Allan Kopinsky Responsable R&D, Salle de repos ...\n
+      En passant devant le bureau de la comptabilité il se retourne vers vous :\n
+        - Au fait moi c'est Vaughn, de la compta. \n
+      A ce moment on entend le téléphone dans son bureau sonner.\n 
+        - Ah merde faut que j'aille répondre désolé, tiens prends 20 cents et va 
+          te prendre un café dans la salle de repos deux portes plus loin à gauche. 
+          Le bureau de Kopinsky est entre le mien et la salle de repos. On 
+          discutera une autre fois ! \n
+
+      engine:
+        - regex: .*
+          dest: 
+  
+  - node: 
+    name: place:17:prog
+      text: >
+      
+
+      engine:
+        - regex: (?i)^1$
+          dest: place:
         - regex: (?i)^2$
           dest: place:employe
