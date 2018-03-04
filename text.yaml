@@ -94,7 +94,7 @@ nodes:
         Vous pouvez tenter de trouver le profil d'un utilisateur de facebook,  en
         tapant son prénom et son nom. \n\n
         1. Connexion avec un autre compte\n
-        * : Utilisez vos connaissances\n"
+        * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
         - regex: (?i)^1$
@@ -211,7 +211,7 @@ nodes:
   - node:
       name: gmok
       text: >
-      L'adresse eternalhawk@gmail est déjà prise. 
+        L'adresse eternalhawk@gmail est déjà prise. 
 
   - node:
       name: gmpw
@@ -522,12 +522,9 @@ nodes:
           Vous êtes connecté sur gmail avec le compte de Jeff Hawkins...\n\n
          
           Voici la liste des 3 derniers e-mails : \n
-          1-
-          2-
-          3-
-
-          * : Utilisez vos connaissances\n
-          B : Vous déconnecter
+          1- De: Cyber-Tag - Tournois de LaserGame à Seattle
+          2- De: A.Kopinksy - Absence au laser pour tout la semaine prochaine: 
+          3- De: X.Shawn - Mot de passe boulot encore oublié, cette fois ci je me met un post-it
  
   - node:
       name: fb:allankopinsky
@@ -573,9 +570,9 @@ nodes:
 
   - node:
       name: ln:ethanhawkins 
-      text:>
-      Vous ne trouvez pas de compte Linkedin associé. Cela vous semble normal Ethan est
-      encore jeune pour avoir un compte Linkedin
+      text: >
+        Vous ne trouvez pas de compte Linkedin associé. Cela vous semble normal Ethan est
+        encore jeune pour avoir un compte Linkedin
   
   - node:
       name: fb:joealbertson
@@ -587,7 +584,7 @@ nodes:
 
   - node:
       name: ln:joealbertson
-      text:>
+      text: >
         Joe n'a pas de compte Linkedin, il ne doit pas en éprouver le besoin vu 
         qu'il travaille a son compte au Cyber-tag.
 
@@ -849,9 +846,9 @@ nodes:
         La pièce se prolonge derrière le bureau et vous appercevez deux ascenseurs 
         au fond entourés par deux cages d'escaliers.\n\n
 
-        1. Vous vous adressez à l'hotesse d'accueil.
+        1. Vous vous adressez à l'hotesse d'accueil.\n
         2. Vous prenez une démarche confiante et traversez le hall sans faire 
-        attention à l'hotesse.
+        attention à l'hotesse.\n
         B. Quitter le bâtiment.
 
 
@@ -868,12 +865,10 @@ nodes:
       name: place:hotess
       text: >
         L'hotesse lève la tête de son ordinateur, sur son badge vous lisez Janett :\n
-          - Bonjour, je peux vous aider ?
+          - Bonjour, je peux vous aider ?\n\n
 
-      http://newandroidbook.com/code/android-5.1.1_r24/external/regex-re2/doc/syntax.htmlhttp://newandroidbook.com/code/android-5.1.1_r24/external/regex-re2/doc/syntax.html  1. Oui, je recherche le siège social de Pharmacrap.
-        2. Oui, je suis là pour SAH Immobilier, à quel étage cela se trouve-t-il ? 
+        2. Oui, je suis là pour SAH Immobilier, à quel étage cela se trouve-t-il ?\n 
         B. Non merci Janett, je comptais juste rejoindre les locaux de Pharmacrap.
-
 
       engine:
         - regex: (?i)^1$
@@ -886,10 +881,10 @@ nodes:
   - node: 
       name: place:hotess:pcrap
       text: >
-        PharmaCrap ? C'est à quel sujet ?
+        PharmaCrap ? C'est à quel sujet ?\n\n
 
         1. Je dois participer à un programme de recherche pour valider leur derniers 
-        produits.
+        produits.\n
         2. C'est mon premier jour ici, je devais rencontrer M. Hawkins mais il m'a 
         dit de le rejoindre directement en haut. J'ai déjà mon badge.
         
@@ -902,30 +897,30 @@ nodes:
   - node: 
       name: place:hotess:prog
       text: >
-      Ah oui le programme d'essais, attendez un instant j'appelle leurs bureaux...\n
-      - Oui Victor, c'est Janett de l'accueil, j'ai ici quelqu'un qui doit 
-        participer au programme de test. Oui. Nan il est tout seul. Ok je te l'envoie.
-      - Prenez ce formulaire et remplissez le, c'est au 17ème étage.
+        Ah oui le programme d'essais, attendez un instant j'appelle leurs bureaux...\n
+        - Oui Patrick, c'est Janett de l'accueil, j'ai ici quelqu'un qui doit 
+        participer au programme de test. Oui. Nan il est tout seul. Ok je te l'envoie.\n
+        Prenez ce formulaire et remplissez le, c'est au 17ème étage.
 
       engine:
         - regex: .*
           dest: place:ascprog
 
   - node: 
-    name: place:hotess:prem
+      name: place:hotess:prem
       text: >
-      Hum... M. Hawkins, il me semble que c'est au 17ème étage, c'est ce qu'il vous 
-      a dit ?
-      Bien, l'ascenseur est juste là, bon courage pour le premier jour !
+        Hum... M. Hawkins, il me semble que c'est au 17ème étage, c'est ce qu'il vous 
+        a dit ?\n
+        Bien, l'ascenseur est juste là, bon courage pour le premier jour !\n
 
       engine:
         - regex: .*
           dest: place:aschq
 
   - node: 
-    name: place:hotess:sah
+      name: place:hotess:sah
       text: >
-      L'agence immobilière ? Voyons... 3ème étage. 
+        L'agence immobilière ? Voyons... 3ème étage. 
 
       engine:
         - regex: .*
@@ -934,10 +929,10 @@ nodes:
   - node: 
       name: place:aschq
       text: >
-      vous vous retrouvez face aux ascenseurs.\n\n
+        Vous vous retrouvez face aux ascenseurs.\n\n
       
-      1. Appeller un ascenseur
-      2. Attendre qu'un employé arrive et appelle l'ascenseur
+        1. Appeller un ascenseur\n
+        2. Attendre qu'un employé arrive et appelle l'ascenseur
 
       engine:
         - regex: (?i)^1$
@@ -948,11 +943,11 @@ nodes:
   - node: 
       name: place:compose
       text: >
-     L'ascenseur de droite s'ouvre. A l'interieur vous trouvez 20 boutons 
-     d'étages numéroté. Pharmacrap est indiqué sur l'étage 17.
+        L'ascenseur de droite s'ouvre. A l'interieur vous trouvez 20 boutons 
+        d'étages numéroté. Pharmacrap est indiqué sur l'étage 17.\n\n
 
-      1. Aller au 17
-      B. Attendre qu'un employé arrive et appelle l'ascenseur
+        1. Aller au 17\n
+        B. Attendre qu'un employé arrive et appelle l'ascenseur
 
       engine:
         - regex: (?i)^1$
@@ -963,15 +958,15 @@ nodes:
   - node: 
       name: place:employe
       text: >
-      Après une attente de quelques minutes un homme habillé décontracté, appelle
-      l'ascenseur. Vous en profitez pour monter avec lui. Il appuye sur l'étage 17.\n\n
+        Après une attente de quelques minutes un homme habillé décontracté, appelle
+        l'ascenseur. Vous en profitez pour monter avec lui. Il appuye sur l'étage 17.\n\n
       
-      Il vous adresse la parole : \n
-      - Vous travaillez pour PharmaCrap ? Je vous ai jamais croisé ici ?\n\n
+        Il vous adresse la parole : \n
+        - Vous travaillez pour PharmaCrap ? Je vous ai jamais croisé ici ?\n\n
 
-      1. C'est mon premier jour, je vais travailler avec M. Hawkins à l'informatique.
-      2. Je travaille au labo habituellement mais je dois faire un rapport aux grand
-      chef sur les derniers résultats du programme de volontaires.
+        1. C'est mon premier jour, je vais travailler avec M. Hawkins à l'informatique.\n
+        2. Je travaille au labo habituellement mais je dois faire un rapport aux grand
+        chef sur les derniers résultats du programme de volontaires.
       
       engine:
         - regex: (?i)^1$
@@ -983,7 +978,7 @@ nodes:
       name: place:ascprog
       text: >
         Vous prennez l'ascenseur jusqu'au 17ème étage, vous arrivez dans une 
-        pièce avec un grand miroir et un homme grand et brun vous attends.\n
+        pièce avec un grand miroir et un homme grand et brun vous attends.\n\n
 
         - Bonjour Monsieur, je suis M. Violett et je m'occupe du programme 
           de volontaires on va s'occuper de vous dans un instant, je vous 
@@ -1010,18 +1005,18 @@ nodes:
   - node: 
       name: place:17
       text: >
-      Vous sortez de l'ascenseur et vous vous retrouvez face à un grand miroir entouré
-      par deux portes. Seulement celle de gauche semble être utilisée régulièrement à 
-      en juger par les traces d'usure sur la poignée. Il y a un lecteur de badge et vous 
-      ne pouvez rien faire pour ouvrir l'accès.  
+        Vous sortez de l'ascenseur et vous vous retrouvez face à un grand miroir entouré
+        par deux portes. Seulement celle de gauche semble être utilisée régulièrement à 
+        en juger par les traces d'usure sur la poignée. Il y a un lecteur de badge et vous 
+        ne pouvez rien faire pour ouvrir l'accès.  \n\n
 
-      En jettant un oeil autour de vous vous remarquez les portes de escalier et une 
-      porte avec le symbole de toilettes dessus.
+        En jettant un oeil autour de vous vous remarquez les portes de escalier et une 
+        porte avec le symbole de toilettes dessus.\n\n
 
-      En attendant quelques minutes vous croisez un employé qui sort des bureaux. 
-      Vous lui expliquez que vous êtes nouveau et que vous avez oublié votre badge 
-      sur votre bureau avant d'aller aux toilettes. 
-      Il vous tient gracieusement la porte pour que vous rentriez.
+        En attendant quelques minutes vous croisez un employé qui sort des bureaux. 
+        Vous lui expliquez que vous êtes nouveau et que vous avez oublié votre badge 
+        sur votre bureau avant d'aller aux toilettes. \n
+        Il vous tient gracieusement la porte pour que vous rentriez.
 
       engine:
         - regex: .*
@@ -1030,22 +1025,22 @@ nodes:
   - node: 
       name: place:17:hawkins
       text: >
-      - Ah Hawkins, le type de l'informatique, ça m'étonne pas vu votre look j'avais 
-      cramé de loin que vous étiez un tech guy. Je vous paye un café pour le premier 
-      jour. \n\n
-      Vous aquiecez et le suivez derrière une porte avec un accès controllé 
-      par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
-      à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
-      Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
-      Informatique, Allan Kopinsky Responsable R&D, Salle de repos ...\n
-      En passant devant le bureau de la comptabilité il se retourne vers vous :\n
+        - Ah Hawkins, le type de l'informatique, ça m'étonne pas vu votre look j'avais 
+        cramé de loin que vous étiez un tech guy. Je vous paye un café pour le premier 
+        jour. \n\n
+        Vous aquiecez et le suivez derrière une porte avec un accès controllé 
+        par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
+        à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
+        Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
+        Informatique, Allan Kopinsky Responsable R&D, Salle de repos ...\n
+        En passant devant le bureau de la comptabilité il se retourne vers vous :\n
         - Au fait moi c'est Vaughn, de la compta. \n
-      A ce moment on entend le téléphone dans son bureau sonner.\n 
+        A ce moment on entend le téléphone dans son bureau sonner.\n 
         - Ah merde faut que j'aille répondre désolé, tiens prends 20 cents et va te prendre 
           un café dans la salle de repos deux portes plus loin à gauche. Le bureau 
-          de Hawkins est celui en face. On discutera une autre fois ! \n
+          de Hawkins est celui en face. On discutera une autre fois ! \n\n
 
-      Vous décidez de quitter la salle de repos.
+        Vous décidez de quitter la salle de repos.
       engine:
         - regex: .*
           dest: place:couloir1
@@ -1053,22 +1048,22 @@ nodes:
   - node: 
       name: place:17:prog
       text: >
-      - Ah le programme, tu dois bosser avec Kopinsky il est en congé cette semaine.
-      Je te paye un café pour le premier jour. \n\n
-      Vous aquiecez et le suivez derrière une porte avec un accès controllé 
-      par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
-      à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
-      Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
-      Informatique, Allan Kopinsky Responsabhttp://newandroidbook.com/code/android-5.1.1_r24/external/regex-re2/doc/syntax.htmlle R&D, Salle de repos ...\n
-      En passant devant le bureau de la comptabilité il se retourne vers vous :\n
+        - Ah le programme, tu dois bosser avec Kopinsky il est en congé cette semaine.
+        Je te paye un café pour le premier jour. \n\n
+        Vous aquiecez et le suivez derrière une porte avec un accès controllé 
+        par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
+        à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
+        Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
+        Informatique, Allan Kopinsky Responsabhttp://newandroidbook.com/code/android-5.1.1_r24/external/regex-re2/doc/syntax.htmlle R&D, Salle de repos ...\n
+        En passant devant le bureau de la comptabilité il se retourne vers vous :\n
         - Au fait moi c'est Vaughn, de la compta. \n
-      A ce moment on entend le téléphone dans son bureau sonner.\n 
+        A ce moment on entend le téléphone dans son bureau sonner.\n 
         - Ah merde faut que j'aille répondre désolé, tiens prends 20 cents et va 
           te prendre un café dans la salle de repos deux portes plus loin à gauche. 
           Le bureau de Kopinsky est entre le mien et la salle de repos. On 
-          discutera une autre fois ! \n
+          discutera une autre fois ! \n\n
 
-      Vous décidez de quitter la salle de repos.
+        Vous décidez de quitter la salle de repos.
 
       engine:
         - regex: .*
@@ -1079,8 +1074,9 @@ nodes:
       text: >
         Vous vous retrouvez maintenant dans le couloir, vous cherchez un bureau avec
         un responsable important marqué dessus. Il y a celui du responsable R&D mais 
-        il est occupé et vous ne pouvez pas y entrer facilement. 
-        Au fond du couloir se trouve le bureau du Directeur et il est vide actuellement.
+        il est occupé et vous ne pouvez pas y entrer facilement.\n 
+        Au fond du couloir se trouve le bureau du Directeur et il est vide actuellement.\n\n
+
         La porte est vérouillée il va falloir la crocheter rapidement. 
 
       engine:
@@ -1095,16 +1091,16 @@ nodes:
         Entrez le numéro de la goupille à tester: \n
 
       engine:
-        - regex:(?i)^1$
-        dest: place:goupille1
-        - regex:(?i)^2$
-        dest: place:goupille2
-        - regex:(?i)^3$
-        dest: place:goupille3
-        - regex:(?i)^4$
-        dest: place:goupille4
-        - regex:(?i)^5$
-        dest: place:goupille5
+        - regex: (?i)^1$
+          dest: place:goupille1
+        - regex: (?i)^2$
+          dest: place:goupille2
+        - regex: (?i)^3$
+          dest: place:goupille3
+        - regex: (?i)^4$
+          dest: place:goupille4
+        - regex: (?i)^5$
+          dest: place:goupille5
 
   - node:
       name: place:goupille1
@@ -1115,16 +1111,16 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^2$
-        dest: place:goupille2
-        - regex:(?i)^3$
-        dest: place:goupille3
-        - regex:(?i)^4$
-        dest: place:goupille4
-        - regex:(?i)^5$
-        dest: place:goupille5
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^2$
+          dest: place:goupille2
+        - regex: (?i)^3$
+          dest: place:goupille3
+        - regex: (?i)^4$
+          dest: place:goupille4
+        - regex: (?i)^5$
+          dest: place:goupille5
           
 
   - node:
@@ -1136,16 +1132,16 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^1$
-        dest: place:goupille1
-        - regex:(?i)^3$
-        dest: place:goupille3
-        - regex:(?i)^4$
-        dest: place:goupille4
-        - regex:(?i)^5$
-        dest: place:goupille5
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^1$
+          dest: place:goupille1
+        - regex: (?i)^3$
+          dest: place:goupille3
+        - regex: (?i)^4$
+          dest: place:goupille4
+        - regex: (?i)^5$
+          dest: place:goupille5
 
   - node:
       name: place:goupille3
@@ -1155,16 +1151,16 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^1$
-        dest: place:goupille1
-        - regex:(?i)^2$
-        dest: place:goupille2
-        - regex:(?i)^4$
-        dest: place:goupille4
-        - regex:(?i)^5$
-        dest: place:goupille5
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^1$
+          dest: place:goupille1
+        - regex: (?i)^2$
+          dest: place:goupille2
+        - regex: (?i)^4$
+          dest: place:goupille4
+        - regex: (?i)^5$
+          dest: place:goupille5
 
 
   - node:
@@ -1175,16 +1171,16 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:croche2
-        - regex:(?i)^1$
-        dest: place:goupille1
-        - regex:(?i)^2$
-        dest: place:goupille2
-        - regex:(?i)^3$
-        dest: place:goupille3
-        - regex:(?i)^5$
-        dest: place:goupille5
+        - regex: (?i)^6$
+          dest: place:croche2
+        - regex: (?i)^1$
+          dest: place:goupille1
+        - regex: (?i)^2$
+          dest: place:goupille2
+        - regex: (?i)^3$
+          dest: place:goupille3
+        - regex: (?i)^5$
+          dest: place:goupille5
 
   - node:
       name: place:goupille5
@@ -1195,16 +1191,16 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^1$
-        dest: place:goupille1
-        - regex:(?i)^2$
-        dest: place:goupille2
-        - regex:(?i)^3$
-        dest: place:goupille3
-        - regex:(?i)^4$
-        dest: place:goupille4
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^1$
+          dest: place:goupille1
+        - regex: (?i)^2$
+          dest: place:goupille2
+        - regex: (?i)^3$
+          dest: place:goupille3
+        - regex: (?i)^4$
+          dest: place:goupille4
 
   - node:
       name: place:croche2
@@ -1215,14 +1211,14 @@ nodes:
         Entrez le numéro de la goupille à tester: \n
 
       engine:
-        - regex:(?i)^1$
-        dest: place:goupille12
-        - regex:(?i)^2$
-        dest: place:goupille22
-        - regex:(?i)^3$
-        dest: place:goupille32
-        - regex:(?i)^5$
-        dest: place:goupille52
+        - regex: (?i)^1$
+          dest: place:goupille12
+        - regex: (?i)^2$
+          dest: place:goupille22
+        - regex: (?i)^3$
+          dest: place:goupille32
+        - regex: (?i)^5$
+          dest: place:goupille52
 
   - node:
       name: place:goupille12
@@ -1233,14 +1229,14 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^2$
-        dest: place:goupille22
-        - regex:(?i)^3$
-        dest: place:goupille32
-        - regex:(?i)^5$
-        dest: place:goupille52
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^2$
+          dest: place:goupille22
+        - regex: (?i)^3$
+          dest: place:goupille32
+        - regex: (?i)^5$
+          dest: place:goupille52
           
 
   - node:
@@ -1252,14 +1248,14 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^1$
-        dest: place:goupille12
-        - regex:(?i)^3$
-        dest: place:goupille32
-        - regex:(?i)^5$
-        dest: place:goupille52
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^1$
+          dest: place:goupille12
+        - regex: (?i)^3$
+          dest: place:goupille32
+        - regex: (?i)^5$
+          dest: place:goupille52
 
   - node:
       name: place:goupille32
@@ -1269,14 +1265,14 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:croche3
-        - regex:(?i)^1$
-        dest: place:goupille12
-        - regex:(?i)^2$
-        dest: place:goupille22
-        - regex:(?i)^5$
-        dest: place:goupille52
+        - regex: (?i)^6$
+          dest: place:croche3
+        - regex: (?i)^1$
+          dest: place:goupille12
+        - regex: (?i)^2$
+          dest: place:goupille22
+        - regex: (?i)^5$
+          dest: place:goupille52
 
   - node:
       name: place:goupille52
@@ -1287,14 +1283,14 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^1$
-        dest: place:goupille12
-        - regex:(?i)^2$
-        dest: place:goupille22
-        - regex:(?i)^3$
-        dest: place:goupille32
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^1$
+          dest: place:goupille12
+        - regex: (?i)^2$
+          dest: place:goupille22
+        - regex: (?i)^3$
+          dest: place:goupille32
 
   - node:
       name: place:croche3
@@ -1305,12 +1301,12 @@ nodes:
         Entrez le numéro de la goupille à tester: \n
 
       engine:
-        - regex:(?i)^1$
-        dest: place:goupille12
-        - regex:(?i)^2$
-        dest: place:goupille22
-        - regex:(?i)^5$
-        dest: place:goupille52
+        - regex: (?i)^1$
+          dest: place:goupille12
+        - regex: (?i)^2$
+          dest: place:goupille22
+        - regex: (?i)^5$
+          dest: place:goupille52
 
   - node:
       name: place:goupille13
@@ -1321,12 +1317,12 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^2$
-        dest: place:goupille23
-        - regex:(?i)^5$
-        dest: place:goupille53
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^2$
+          dest: place:goupille23
+        - regex: (?i)^5$
+          dest: place:goupille53
           
 
   - node:
@@ -1338,12 +1334,12 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:rate
-        - regex:(?i)^1$
-        dest: place:goupille13
-        - regex:(?i)^5$
-        dest: place:goupille53
+        - regex: (?i)^6$
+          dest: place:rate
+        - regex: (?i)^1$
+          dest: place:goupille13
+        - regex: (?i)^5$
+          dest: place:goupille53
 
   - node:
       name: place:goupille53
@@ -1353,12 +1349,12 @@ nodes:
         Essayer une autre goupille en tapant un autre numéro \n
         ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
       engine:
-        - regex:(?i)^6$
-        dest: place:fin
-        - regex:(?i)^1$
-        dest: place:goupille13
-        - regex:(?i)^2$
-        dest: place:goupille23
+        - regex: (?i)^6$
+          dest: place:fin
+        - regex: (?i)^1$
+          dest: place:goupille13
+        - regex: (?i)^2$
+          dest: place:goupille23
 
 
   - node:
@@ -1369,16 +1365,16 @@ nodes:
         tenter de la remonter.
 
       engine:
-        - regex:(?i)^1$
-        dest: place:goupille1
-        - regex:(?i)^2$
-        dest: place:goupille2
-        - regex:(?i)^3$
-        dest: place:goupille3
-        - regex:(?i)^4$
-        dest: place:goupille4
-        - regex:(?i)^5$
-        dest: place:goupille5
+        - regex: (?i)^1$
+          dest: place:goupille1
+        - regex: (?i)^2$
+          dest: place:goupille2
+        - regex: (?i)^3$
+          dest: place:goupille3
+        - regex: (?i)^4$
+          dest: place:goupille4
+        - regex: (?i)^5$
+          dest: place:goupille5
 
   - node:
       name: place:bureau
