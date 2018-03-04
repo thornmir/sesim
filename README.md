@@ -18,7 +18,8 @@ qui leur paraissent pertinentes pour progresser.
 
 Ce programme peut être réutilisé pour n'importe quel scénario, il suffit 
 simplement de créer de nouveaux noeuds au format suivant : 
-(Attention en yaml l'indentation est très importante ainsi que les tirets)
+(Attention en yaml l'indentation est très importante ainsi que les tirets
+et les espaces après les ':' )
 
 ````
 nodes:
@@ -53,3 +54,18 @@ l'expression insenssible à la casse.
 
 Les symboles ^ et $ permettent de valider que l'utilisateur n'a 
 pas entré d'autres caractères que ceux attendus.
+
+## Compilation et lancement du programme.
+
+Pour compiler il faut les outils de compilation go issus du package 
+intitulé go.
+
+Il faut également ajouter au path le dossier dans lequel se situe le 
+binaire go. Le dossier par défaut est $HOME/go/bin.
+``export PATH="$PATH:$HOME/go/bin"``
+
+Rendez vous ensuite dans le dossier contenant main.go et executer 
+``go build main.go``
+
+Maintenant il suffit juste de lancer le programme avec ``./main``
+et connecter un client netcat.
