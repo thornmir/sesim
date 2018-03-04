@@ -73,7 +73,7 @@ nodes:
           dest: help
         - regex: (?i)^pharmacrap$|^(www\.)?pharmacrap\.com$
           dest: pharmacrap
-        - regex: (?i)^laser(tag|game)?$|^cybertag$|^cyber tag$|^(www\.)?cyber-tag.net$
+        - regex: (?i)^laser(tag|game)?$|^cyber-tag$|^cyber tag$|^(www\.)?cyber-tag.net$
           dest: lasertag
         - regex: (?i)^B$
           dest: pc
@@ -171,7 +171,7 @@ nodes:
         - regex: (?i)^(www\.)?pharmacrap\.com$
           dest: who:pharmacrap
         - regex: (?i)^(www\.)?cyber-tag\.net$
-          dest: who:cybertag
+          dest: who:cyber-tag
         - regex: (?i)^hawkins\.me$
           dest: who:hawkins
         - regex: (?i)^B$
@@ -284,10 +284,10 @@ nodes:
         incroyables ! Venez avec un groupe d'au moins 5 personnes, ou 
         participez aux séances d'initiation le samedi matin de 9h à 12h.
 
-        *Nouveau* Le CyberTag accueillera très prochainement le premier 
+        *Nouveau* Le Cyber-tag accueillera très prochainement le premier 
         tournoi de LaserGame de l'état de Washington.
 
-        CyberTag
+        Cyber-tag
         17600 W Valley Hwy | Tukwila Washington 98188 
         Tel: 425-490-1330
         
@@ -356,7 +356,7 @@ nodes:
         >>> Last update of WHOIS database: 2018-02-27T13:06:23Z <<<
 
   - node:
-      name: who:cybertag
+      name: who:cyber-tag
       text: >
         Le résultat de la recherche whois est le suivant : \n\n
 
@@ -374,8 +374,8 @@ nodes:
         Reseller: \n
         Domain Status: \n
         Registry Registrant ID: \n
-        Registrant Name: CyberTag\n
-        Registrant Organization: CyberTag\n
+        Registrant Name: Cyber-tag\n
+        Registrant Organization: Cyber-tag\n
         Registrant Street: 17600 W Valley Hwy\n
         Registrant City: TUKWILA\n
         Registrant State/Province: WA\n
@@ -388,7 +388,7 @@ nodes:
         Registrant Email: jalbertson@gmail.com \n
         Registry Admin ID: \n
         Admin Name: Albertson, Joe\n
-        Admin Organization: CyberTag\n
+        Admin Organization: Cyber-tag\n
         Admin Street: \n
         Admin City: \n
         Admin State/Province: \n
@@ -581,7 +581,7 @@ nodes:
       name: fb:joealbertson
       text: >
         Joe Albertson utilise principalement facebook pour communiquer autour de sa
-        salle de LaserGame le CyberTag qu'il a créé en 2010. 
+        salle de LaserGame le Cyber-tag qu'il a créé en 2010. 
         Il ne révèle pas d'information sur sa situation familialle ou le reste de sa
         vie privée.
 
@@ -589,7 +589,7 @@ nodes:
       name: ln:joealbertson
       text:>
         Joe n'a pas de compte Linkedin, il ne doit pas en éprouver le besoin vu 
-        qu'il travaille a son compte au CyberTag.
+        qu'il travaille a son compte au Cyber-tag.
 
   - node:
       name: fb:prive
@@ -667,7 +667,7 @@ nodes:
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: (?i)^laser(tag|game)?$|^cybertag$|^cyber tag$
+        - regex: (?i)^laser(tag|game)?$|^cyber-tag$|^cyber tag$
           dest: set:splaser
         - regex: (?i)^b$
           dest: set:se
@@ -675,9 +675,10 @@ nodes:
   - node:
       name: set:splaser
       text: >
+        De: contact@cyber-tag.net
         Sujet: Tournois de LaserGame à Seattle\n
         Corps: Bonjour Jeff,\n
-        l'équipe du CyberTag a l'immense plaisir d'organiser un grand tournois de \n
+        l'équipe du Cyber-tag a l'immense plaisir d'organiser un grand tournois de \n
         Lasergame entre les meilleurs combatants de l'état de Washington.
         Ce tournois aura lieu le Samedi 7 Mars 2018 sur notre terrain habituel au \n
         coeur de Seattle. \n\n
@@ -695,9 +696,9 @@ nodes:
         <Lien vers l'évènement facebook>\n\n
 
         En esperant te voir participer,\n
-        Amicalement, \n
+        :/Amicalement, \n
         Joe Albertson\n
-        Gérant du Cybertag\n\n
+        Gérant du Cyber-tag\n\n
 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n
        
@@ -869,7 +870,7 @@ nodes:
         L'hotesse lève la tête de son ordinateur, sur son badge vous lisez Janett :\n
           - Bonjour, je peux vous aider ?
 
-        1. Oui, je recherche le siège social de Pharmacrap.
+      http://newandroidbook.com/code/android-5.1.1_r24/external/regex-re2/doc/syntax.htmlhttp://newandroidbook.com/code/android-5.1.1_r24/external/regex-re2/doc/syntax.html  1. Oui, je recherche le siège social de Pharmacrap.
         2. Oui, je suis là pour SAH Immobilier, à quel étage cela se trouve-t-il ? 
         B. Non merci Janett, je comptais juste rejoindre les locaux de Pharmacrap.
 
@@ -883,7 +884,7 @@ nodes:
           dest: place:aschq
 
   - node: 
-    name: place:hotess:pcrap
+      name: place:hotess:pcrap
       text: >
         PharmaCrap ? C'est à quel sujet ?
 
@@ -899,7 +900,7 @@ nodes:
           dest: place:hotess:prem
 
   - node: 
-    name: place:hotess:prog
+      name: place:hotess:prog
       text: >
       Ah oui le programme d'essais, attendez un instant j'appelle leurs bureaux...\n
       - Oui Victor, c'est Janett de l'accueil, j'ai ici quelqu'un qui doit 
@@ -931,7 +932,7 @@ nodes:
           dest: place:aschq
 
   - node: 
-    name: place:aschq
+      name: place:aschq
       text: >
       vous vous retrouvez face aux ascenseurs.\n\n
       
@@ -945,7 +946,7 @@ nodes:
           dest: place:employe
 
   - node: 
-    name: place:compose
+      name: place:compose
       text: >
      L'ascenseur de droite s'ouvre. A l'interieur vous trouvez 20 boutons 
      d'étages numéroté. Pharmacrap est indiqué sur l'étage 17.
@@ -960,7 +961,7 @@ nodes:
           dest: place:employe
 
   - node: 
-    name: place:employe
+      name: place:employe
       text: >
       Après une attente de quelques minutes un homme habillé décontracté, appelle
       l'ascenseur. Vous en profitez pour monter avec lui. Il appuye sur l'étage 17.\n\n
@@ -979,10 +980,11 @@ nodes:
           dest: place:17:prog
   
   - node: 
-    name: place:ascprog
+      name: place:ascprog
       text: >
         Vous prennez l'ascenseur jusqu'au 17ème étage, vous arrivez dans une 
         pièce avec un grand miroir et un homme grand et brun vous attends.\n
+
         - Bonjour Monsieur, je suis M. Violett et je m'occupe du programme 
           de volontaires on va s'occuper de vous dans un instant, je vous 
           offre un café ?\n\n
@@ -990,21 +992,23 @@ nodes:
         Vous aquiecez et le suivez derrière une porte avec un accès controllé 
         par badge. Un long couloir s'étend parsemé de porte fermées à droite et 
         à gauche. Vous essayez de lire tous les écritaux sur chaque porte: \n
-        Salle réunion Visio, Chris Vaughn Comptabilité, Jeff Hawkins Service 
-        Informatique, Allan Kopinsky Responsable R&D, Salle de repos ...\n
+        Salle réunion Visio, C. Vaughn Comptabilité,  A. Kopinsky P. Violett 
+        Responsables R&D, J. Hawkins Service Informatique, Salle de repos ...\n
         En entrant dans la salle de repos vous ne parvenez pas à lire les 
-        écritaux des trois dernières portes.
+        écritaux des trois dernières portes.\n\n
         
+        Vous passez tout l'entretien avec lui en répondant à chacune de ses 
+        questions...\n\n
 
+        - Bien, ce sera tout M. Robat, je vous laisse retrouver le chemin pour 
+          partir.
 
       engine:
-        - regex: (?i)^1$
-          dest: place:
-        - regex: (?i)^2$
-          dest: place:employe
+        - regex: .*
+          dest: place:couloir1
 
   - node: 
-    name: place:17
+      name: place:17
       text: >
       Vous sortez de l'ascenseur et vous vous retrouvez face à un grand miroir entouré
       par deux portes. Seulement celle de gauche semble être utilisée régulièrement à 
@@ -1024,7 +1028,7 @@ nodes:
           dest: place:couloir1
 
   - node: 
-    name: place:17:hawkins
+      name: place:17:hawkins
       text: >
       - Ah Hawkins, le type de l'informatique, ça m'étonne pas vu votre look j'avais 
       cramé de loin que vous étiez un tech guy. Je vous paye un café pour le premier 
@@ -1040,12 +1044,14 @@ nodes:
         - Ah merde faut que j'aille répondre désolé, tiens prends 20 cents et va te prendre 
           un café dans la salle de repos deux portes plus loin à gauche. Le bureau 
           de Hawkins est celui en face. On discutera une autre fois ! \n
+
+      Vous décidez de quitter la salle de repos.
       engine:
         - regex: .*
           dest: place:couloir1
 
   - node: 
-    name: place:17:prog
+      name: place:17:prog
       text: >
       - Ah le programme, tu dois bosser avec Kopinsky il est en congé cette semaine.
       Je te paye un café pour le premier jour. \n\n
@@ -1062,17 +1068,416 @@ nodes:
           Le bureau de Kopinsky est entre le mien et la salle de repos. On 
           discutera une autre fois ! \n
 
+      Vous décidez de quitter la salle de repos.
+
       engine:
         - regex: .*
           dest: place:couloir1
   
   - node: 
-    name: place:couloir1
+      name: place:couloir1
       text: >
-      
+        Vous vous retrouvez maintenant dans le couloir, vous cherchez un bureau avec
+        un responsable important marqué dessus. Il y a celui du responsable R&D mais 
+        il est occupé et vous ne pouvez pas y entrer facilement. 
+        Au fond du couloir se trouve le bureau du Directeur et il est vide actuellement.
+        La porte est vérouillée il va falloir la crocheter rapidement. 
 
       engine:
         - regex: (?i)^1$
-          dest: place:
+          dest: place:crochetage
+
+  - node:
+      name: place:crochetage
+      text: >
+        Vous sortez rapidement un crochet et un levier que vous insérez dans la sérurre.
+        Vous identifiez 5 goupilles.\n
+        Entrez le numéro de la goupille à tester: \n
+
+      engine:
+        - regex:(?i)^1$
+        dest: place:goupille1
+        - regex:(?i)^2$
+        dest: place:goupille2
+        - regex:(?i)^3$
+        dest: place:goupille3
+        - regex:(?i)^4$
+        dest: place:goupille4
+        - regex:(?i)^5$
+        dest: place:goupille5
+
+  - node:
+      name: place:goupille1
+      text: >
+        La première goupille est très souple et ne semble pas se bloquer quand
+        vous la remontez.\n
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^2$
+        dest: place:goupille2
+        - regex:(?i)^3$
+        dest: place:goupille3
+        - regex:(?i)^4$
+        dest: place:goupille4
+        - regex:(?i)^5$
+        dest: place:goupille5
+          
+
+  - node:
+      name: place:goupille2
+      text: >
+        La deuxième goupille offre un peu de résistance mais ne semble pas se bloquer quand
+        vous la remontez.\n
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^1$
+        dest: place:goupille1
+        - regex:(?i)^3$
+        dest: place:goupille3
+        - regex:(?i)^4$
+        dest: place:goupille4
+        - regex:(?i)^5$
+        dest: place:goupille5
+
+  - node:
+      name: place:goupille3
+      text: >
+        La troisième goupille est résistante vous peinez à la bouger.\n
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^1$
+        dest: place:goupille1
+        - regex:(?i)^2$
+        dest: place:goupille2
+        - regex:(?i)^4$
+        dest: place:goupille4
+        - regex:(?i)^5$
+        dest: place:goupille5
+
+
+  - node:
+      name: place:goupille4
+      text: >
+        La quatrième goupille reste immobile quand vou essayez de la déplacer.
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:croche2
+        - regex:(?i)^1$
+        dest: place:goupille1
+        - regex:(?i)^2$
+        dest: place:goupille2
+        - regex:(?i)^3$
+        dest: place:goupille3
+        - regex:(?i)^5$
+        dest: place:goupille5
+
+  - node:
+      name: place:goupille5
+      text: >
+        La cinquième goupille offre un peu de résistance quand vou essayez 
+        de la déplacer mais n'est pas bloqué.
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^1$
+        dest: place:goupille1
+        - regex:(?i)^2$
+        dest: place:goupille2
+        - regex:(?i)^3$
+        dest: place:goupille3
+        - regex:(?i)^4$
+        dest: place:goupille4
+
+  - node:
+      name: place:croche2
+      text: >
+        En relachant la pression légerement vous parvenez à remonter la quatrième 
+        goupille qui laisse échaper un "clic". Il vous reste les quatres suivantes.
+
+        Entrez le numéro de la goupille à tester: \n
+
+      engine:
+        - regex:(?i)^1$
+        dest: place:goupille12
+        - regex:(?i)^2$
+        dest: place:goupille22
+        - regex:(?i)^3$
+        dest: place:goupille32
+        - regex:(?i)^5$
+        dest: place:goupille52
+
+  - node:
+      name: place:goupille12
+      text: >
+        La première goupille est très souple et ne semble pas se bloquer quand
+        vous la remontez.\n
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^2$
+        dest: place:goupille22
+        - regex:(?i)^3$
+        dest: place:goupille32
+        - regex:(?i)^5$
+        dest: place:goupille52
+          
+
+  - node:
+      name: place:goupille22
+      text: >
+        La deuxième goupille est résistante mais bouge quand vous essayez de
+        la remonter.\n
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^1$
+        dest: place:goupille12
+        - regex:(?i)^3$
+        dest: place:goupille32
+        - regex:(?i)^5$
+        dest: place:goupille52
+
+  - node:
+      name: place:goupille32
+      text: >
+        La troisième goupille est résistante vous peinez à la bouger.\n
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:croche3
+        - regex:(?i)^1$
+        dest: place:goupille12
+        - regex:(?i)^2$
+        dest: place:goupille22
+        - regex:(?i)^5$
+        dest: place:goupille52
+
+  - node:
+      name: place:goupille52
+      text: >
+        La cinquième goupille offre un peu de résistance quand vou essayez 
+        de la déplacer mais n'est pas bloqué.
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^1$
+        dest: place:goupille12
+        - regex:(?i)^2$
+        dest: place:goupille22
+        - regex:(?i)^3$
+        dest: place:goupille32
+
+  - node:
+      name: place:croche3
+      text: >
+        Le clic de la troisième goupille vous indique que vous êtes sur la bonne voie 
+        plus que trois.
+
+        Entrez le numéro de la goupille à tester: \n
+
+      engine:
+        - regex:(?i)^1$
+        dest: place:goupille12
+        - regex:(?i)^2$
+        dest: place:goupille22
+        - regex:(?i)^5$
+        dest: place:goupille52
+
+  - node:
+      name: place:goupille13
+      text: >
+        La première goupille est très souple et ne semble pas se bloquer quand
+        vous la remontez.\n
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^2$
+        dest: place:goupille23
+        - regex:(?i)^5$
+        dest: place:goupille53
+          
+
+  - node:
+      name: place:goupille23
+      text: >
+        La deuxième goupille est résistante mais bouge quand vous essayez de
+        la remonter.\n
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:rate
+        - regex:(?i)^1$
+        dest: place:goupille13
+        - regex:(?i)^5$
+        dest: place:goupille53
+
+  - node:
+      name: place:goupille53
+      text: >
+        La cinquième goupille est bien plus résistante.
+
+        Essayer une autre goupille en tapant un autre numéro \n
+        ou entrez 6 pour relacher la pression et tenter de remonter cette goupille
+      engine:
+        - regex:(?i)^6$
+        dest: place:fin
+        - regex:(?i)^1$
+        dest: place:goupille13
+        - regex:(?i)^2$
+        dest: place:goupille23
+
+
+  - node:
+      name: place:rate
+      text: >
+        Vous avez trop relaché la pression sur le levier et il faut recommencer. 
+        Pensez à vous assurer que la goupille est la plus resistante avant de 
+        tenter de la remonter.
+
+      engine:
+        - regex:(?i)^1$
+        dest: place:goupille1
+        - regex:(?i)^2$
+        dest: place:goupille2
+        - regex:(?i)^3$
+        dest: place:goupille3
+        - regex:(?i)^4$
+        dest: place:goupille4
+        - regex:(?i)^5$
+        dest: place:goupille5
+
+  - node:
+      name: place:bureau
+      text: >
+        Bien il ne reste plus que la goupille 2 et 1, vous testez successivement 
+        l'une puis l'autre et la porte s'ouvre. 
+
+        Vousz commencez a fouiller le bureau en essayant de rester discret 
+        l'ordinateur est verrouillé par un mot de passe. Vous cherchez dans 
+        les tiroirs en quete d'un post-it, sous le clavier mais non.
+        C'est finalement sous le bureau que vous trouvez le pense bête collé
+        avec inscrit Sm4$hTheSt4te .
+
+        Vous entrez le mot de passe sur l'ordinateur et vous trouvez rapidement 
+        ce que vous étiez venu chercher : \n
+        Un échange de mail entre le directeur et M. Violett parlant du programme
+        de volontaires.\n\n 
+        Vous découvrez que Pharmacrap est en train de créer un clone de la variole,
+        dans le but de déclencher une épidémie aux Etats Unis. Leur version 
+        appellé la variole grise est léthale au bout d'une semaine et il ont 
+        réussi à develloper un vaccin qui s'estompe au bout de d'une semaine 
+        leur permettant de garder le controle sur les hommes influents.
+        Ils sont dans la phase finale de leur projet et le programme de 
+        volontaires sert a trouver des cobaye pour leur test. A ce jour 30 
+        personnes sont décédées dans leur laboratoire toutes sans attache 
+        familialle pour ne pas éveiller les soupcons.
+
+        La date prévue pour le jour J arrive dans seulement 25 jours.
+
+        Vous copiez cet échange de mail sur une clé USB ainsi que le dossier 
+        scientifique sur la variole grise et celui sur le vaccin.
+
+        Puis vous quittez les locaux de PharmaCrap aussi facilement que vous 
+        y êtes entré.
+  
+        engine:
+          - regex : .*
+            dest: fin:choix 
+
+
+  - node:
+      name: fin:choix
+      text: >
+        De retour chez vous, vous devez prendre une décision vis à vis de ce que 
+        vous souhaitez faire. Les instructions de la société concurrente étaient 
+        de leur transmettre toutes les preuves que que aviez trouvées. \n\n
+
+        1. Vous ne pouvez pas laisser faire PharmaCrap vous allez les dénoncer 
+        aux autorités gouvernementales et vous leur transmettez les preuves.\n
+        2. Vous choisissez de ne transmettre que le dossier sur l'antidote en 
+        prétextant ne pas avoir eu accès à celui sur le virus et son procédé 
+        de synthèse.\n 
+        3. Vous transmettez toutes les preuves que vous avez trouvées à la 
+        société concurrente comme il était stipulé dans votre commande.
+
+      engine:
+        - regex: (?i)^1$
+          dest: fin1
         - regex: (?i)^2$
-          dest: place:employe
+          dest: fin2
+        - regex: (?i)^3$
+          dest: fin3
+
+
+  - node:
+      name: fin1
+      text: >
+        Vous contactez les autorités gouvernementales et les preuves accablantes
+        que leur avez fournies permettent de mettre un terme aux machination de 
+        PharmaCrap. Vous avez pris soins de le faire de facon anonyme car vous 
+        restez un mercenaire et que vous êtes détenteur de nombreux chefs 
+        d'accusations suffisament pour être enfermé un moment.\n\n
+
+        Vous ne touchez aucune récompense pour vos action mais la satisfaction 
+        d'avoir sauvé des millions de vies vous suffit.\n\n
+
+        Cette simulation est terminée merci d'y avoir participé, à bientot !
+
+  - node:
+      name: fin2
+      text: >
+        Vous ne transmettez que le dossier sur l'antidote à votre client. Ce 
+        dernier décide de ne pas dénoncer PharmaCrap et le virus est relaché 
+        à la date prévue.\n La société concurente profite alors de lapanique 
+        générale pour proposer son alternative au vaccin de Pharmacrap et 
+        ainsi rompre la situation de monopole. \n\n
+
+        Vous touchez la récompense comme prévue dans votre accord.\n\n
+
+        Cette simulation est terminée merci d'y avoir participé, à bientot !
+
+  - node:
+      name: fin3
+      text: >
+        Vous transmettez tous les dossier à votre client, au bout de deux 
+        semaines vous recevez votre récompense ainsi qu'une centaine de 
+        flacon de vaccin. Le virus est aussitot relaché mais cette fois-ci
+        par la société concurrente et PharmaCrap se fait couper l'herbe 
+        sous le pieds.\n\n
+        
+        Cette simulation est terminée merci d'y avoir participé, à bientot !
+
