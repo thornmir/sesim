@@ -69,3 +69,6 @@ Rendez vous ensuite dans le dossier contenant main.go et executer
 
 Maintenant il suffit juste de lancer le programme avec ``./main``
 et connecter un client netcat.
+
+## Solution du tuto 
+La solution du simulateur se trouve dans le [wiki](https://github.com/thornmir/sesim/wiki#solution-compl%C3%A8te-de-choose-your-own-social-engineering-adventure) 
