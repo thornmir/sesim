@@ -1,0 +1,56 @@
+
+# Solution complète de Choose your own Social Engineering adventure
+
+## Introduction
+Dans le premier paragraphe qui apparaît à l’écran on prend connaissance d’informations importantes qu’il faut garder en tête tout le long de l’attaque.
+La cible est la société PharmaCrap
+Vous cherchez deux types de documents : des document remettant en cause l’expertise ou l’éthique de la société et les dossier technique de recherche sur les produits de PharmaCrap.
+
+Le joueur découvrira au fil de l’aventure trois preuves :
+nature, la société concurrente choisi de mettre sur le marché sa propre version de l’antidote ce qui empêche la domination de PharmaCrap.
+
+### Phase 1: Collecte d’information
+
+Au tout début le joueur a accès à son PC et ne dispose d’aucun numéro de téléphone ou adresse. Il faut tout d’abord se rendre sur le site web de Pharmacrap sur lequel on obtient le numéro de téléphone du siège social et son adresse. Si le joueur décide de se rendre immédiatement sur site le manque d’information ne lui permettra pas d’aller jusqu’au bout de son infiltration.
+
+Le joueur doit utiliser le service de whois pour obtenir l’identité de l’administrateur du site web de l’entreprise, il s’agit de Jeff Hawkins. Maintenant que le joueur dispose de son nom il peut obtenir des information sur lui via facebook par exemple.
+Le joueur apprend que JH est un fan de combat de laser et un de ses amis proche Allan Kopinsky commente ses publications. Il apprend aussi que Allan Kopinsky est un scientifique qui étudie les mutations génétiques des virus pathogènes pour le compte de PharmaCrap. Son profil facebook est privé.
+
+Cependant, le joueur a maintenant une nouvelle information cruciale pour sa mission; Jeff Hawkins est un grand joueur de combats de laser chez CyberTag. Sur le site de CyberTag, il aperçoit que ces derniers organisent un grand concours dont la récompense est très intéressante. Cela pourrait être un bon prétexte pour lui écrire un mail de spearphishing, mais il manque encore son adresse mail personnelle.
+
+Cette dernière est obtenable de deux manières; la première étant d’essayer de deviner à  partir de son pseudo sur le tableau des score et vérifier si Gmail vous préviens que ce nom est déjà prit, la deuxième étant de chercher Jeff Hawkins sur LinkedIn, trouver une de ses adresses jeff@hawkins.me. En tapant hawkins.me dans Whois, vous trouvez enfin son adresse personnelle dans les informations de contact du dns : eternalhawk@gmail.com.
+
+Vous décidez donc de lui envoyer un mail de spearphishing en vous faisant passer pour la société CyberTag, lui proposant de postuler pour le concours de combat de laser, en suivant leurs page sur Facebook, lien à l’appui.
+
+Il faut donc d’abord cloner la page d’identification facebook en choisissant Social-Engineering Attacks dans SET, puis en sélectionnant Website attack vectors, et pour finir Credential Harvester Attack Method, taper facebook.com , mais le lien de cette page clonée reste trop suspect.
+
+Il faut donc utiliser le site Isgd, l’url shortener, pour raccourcir de lien et envoyer l’e-mail. Après un peu d’attente la cible clique sur le lien et entre ses identifiants sur le faux site sans s’en rendre compte et le joueur a maintenant à sa disposition les identifiants facebook de Jeff Hawkins et en essayant sur gmail vous constatez qu’il utilise le même mot de passe sur tous ses comptes.
+
+
+Voici vos découvertes jusqu’ici:
+Pseudonyme: EternalHawk
+Mail perso: eternalhawk@gmail.com
+Mot de passe: ahchom0e\i
+
+
+### Phase 2: Infiltration sur le site
+
+Dans cette phase il n’y a pas de piège et peu de suppositions a faire pour garder la simplicité du jeu.  Le joueur va accéder à la seule adresse qu’il connaît le siège social de Pharmacrap. Une version plus travaillée du jeu aurait pu inclure les adresses personnelles des employés ou un site secondaire comme un laboratoire un peu mieux sécurisé. 
+
+Le joueur arrive dans le hall et va prendre l'ascenseur, ici pas de grosse difficulté pour sortir un mensonge crédible à l'hôtesse d’accueil. Si le joueur prétexte faire partie du programme de volontaire il va être attendu en haut de l'ascenseur par un employé chargé du programme. 
+S’il n’a pas parlé du programme il doit monter seul ou attendre un employé pour le suivre si une porte est protégée par badge.
+S’il monte tout seul il pourra trouver un moyen de  passer la porte lorsqu’un employé sortira.
+
+Quel que soit le chemin pris le joueur arrive dans le couloir et recherche le bureau du directeur. Heureusement il est vide mais verrouillé. Le joueur doit faire face à un mini-jeu de crochetage pour ouvrir la porte. Les goupilles sont à activer dans l’ordre 4-3-5-2-1
+
+Le joueur trouve sur l’ordinateur du directeur :
+Un échange de courrier électronique compromettant entre le PDG de la société et le chef du département R&D. Cet échange indique au joueur que la société PharmaCrap en parallèle de ses activités, est en train de développer un clone de la variole appelée la variole grise. Ce virus est létal à 98% une semaine après la contamination est les facteurs de contagions sont élevés. Ce virus se révèle être une arme bactériologique extrêmement dangereuse et la société envisage de faire pression sur les hommes influents en échange d’un traitement qui n’a d’effet que pour une semaine. 
+Le dossier complet sur le virus de la variole grise et son procédé de synthèse.
+Le dossier complet sur l’antidote contre la variole et son procédé de synthèse.
+
+Le choix est parmi les suivants :
+Dénoncer la société PharmaCrap aux autorités gouvernementales, cette action entraîne la perte totale de sa récompense.
+Fournir toutes les preuves trouvées exceptée le dossier sur la variole grise à la société concurrente. Vous ne recevez pas la totalité de la récompense car il manque le dossier sur le virus, la société concurrente décide de ne pas publier les preuves pour nuire à PharmaCrap. Le plan de cette dernière finit par être exécuté et la variole grise est lâchée dans la
+Fournir toutes les preuves que vous avez trouvées à la société concurrente. Le hacker empoche la totalité de la récompense, mais deux semaines plus tard le virus est lâchée dans la nature et la société concurrente en est à l’origine et non Pharmacrap.
+
+
