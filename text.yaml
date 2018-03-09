@@ -57,13 +57,13 @@ nodes:
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: (?i)^fb$|facebook(\.com)?$
+        - regex: (?i)^fb|facebook(\.com)?$
           dest: facebook
-        - regex: (?i)^ln$|linkedin(\.com$)?
+        - regex: (?i)^ln|linkedin(\.com$)?$
           dest: linkedin
         - regex: (?i)^who(is)?$
           dest: whois
-        - regex: (?i)gm|mail|^gmail(\.com)?$
+        - regex: (?i)^gm|mail|gmail(\.com)?$
           dest: gmail
         - regex: (?i)^isgd$
           dest: isgd
@@ -71,7 +71,7 @@ nodes:
           dest: help
         - regex: (?i)^pharmacrap$|^(www\.)?pharmacrap\.com$
           dest: pharmacrap
-        - regex: (?i)^laser(tag|game)?$|^cyber-tag$|^cyber tag$|^(www\.)?cyber-tag.net$
+        - regex: (?i)^laser(tag|game)?$|^cyber-tag$|^cyber tag$|^$cybertag$|^(www\.)?cyber-tag.net$
           dest: lasertag
         - regex: (?i)^B$
           dest: pc
@@ -215,7 +215,7 @@ nodes:
         * : Utilisez vos connaissances\n
         B : Revenir en arrière
       engine:
-        - regex: ^ahchom0e\i$
+        - regex: ^ahChom0e%i$
           dest: gm:asjh
         - regex: (?i)^b$
           dest: gmail
@@ -304,7 +304,7 @@ nodes:
         Registrant Phone Ext: \n
         Registrant Fax: +1.7344029150\n
         Registrant Fax Ext: \n
-        Registrant Email: jhawkins@pharamacrap.com\n
+        Registrant Email: jhawkins@pharmacrap.com\n
         Registry Admin ID: \n
         Admin Name: Hawkins, Jeff\n
         Admin Organization: PharmaCrap Inc.\n
@@ -317,10 +317,10 @@ nodes:
         Admin Phone Ext: \n
         Admin Fax: +1.8772718850\n
         Admin Fax Ext: \n
-        Admin Email: jhawkins@pharamacrap.com\n
+        Admin Email: jhawkins@pharmacrap.com\n
         Registry Tech ID: \n
         Tech Name: Hawkins, Jeff\n
-        Tech Organization: PharamaCrap Inc.\n
+        Tech Organization: PharmaCrap Inc.\n
         Tech Street:  PO BOX 8110\n
         Tech City: SEATTLE\n
         Tech State/Province: WA\n
@@ -330,7 +330,7 @@ nodes:
         Tech Phone Ext: \n
         Tech Fax: +1.8772718850\n
         Tech Fax Ext: \n
-        Tech Email: jhawkins@pharamacrap.com\n
+        Tech Email: jhawkins@pharmacrap.com\n
         Name Server: NS99.WORLDNIC.COM\n
         Name Server: NS100.WORLDNIC.COM\n
         DNSSEC: Unsigned\n
@@ -447,7 +447,7 @@ nodes:
         sur l'univers warcraft.\n
         Musique : Il écoute du jazz et du blues. Il aprécie également les
         compositeur de BO de films Hans Zimmer, Howard Shore et John Williams.\n
-        Hobbies : Adepte de LaserGame, il partage et like tous les évènements de
+        Hobbies : Adepte de L/aaserGame, il partage et like tous les évènements de
         la société de LaserGame, Cyber Tag.\n
         Son mur est visible uniquement par ses amis mais on peut voir une photo\n
         de banière publique avec un score de partie de LaserGame.\n
@@ -498,7 +498,9 @@ nodes:
           Voici la liste des 3 derniers e-mails : \n
           1- De: Cyber-Tag - Tournois de LaserGame à Seattle\n
           2- De: A.Kopinksy - Absence au laser pour tout la semaine prochaine\n
-          3- De: X.Shawn - Mot de passe boulot encore oublié, cette fois-i je me met un post-it
+          3- De: X.Shawn - Mot de passe boulot encore oublié, cette fois-ci je me met un post-it\n          
+          Dans la signature de X Shawn vous trouvez l'adresse des bureaux de PharmaCrap : 
+          805 5th Ave. Seattle
  
   - node:
       name: fb:allankopinsky
@@ -510,7 +512,7 @@ nodes:
   - node:
       name: ln:allankopinsky
       text: >
-        Allan Kopinsky est un scientifique du département R&D chez Pharamacrap, il a
+        Allan Kopinsky est un scientifique du département R&D chez Pharmacrap, il a
         fait une thèse en génétique et publie régulièrement ses travaux sur l'étude
         des mutation génétiques de virus pandémiques. Ses derniers travaux portent
         sur le virus Ebola qui a sévi en Afrique.\n\n       
@@ -755,7 +757,7 @@ nodes:
           PARAM: lgnrnd=070146_ZYa_\n
           PARAM: lgnjs=1518015725\n
           POSSIBLE USERNAME FIELD FOUND: email=eternalhawk@gmail.com\n
-          POSSIBLE PASSWORD FIELD FOUND: pass=ahChom0e\i \n
+          POSSIBLE PASSWORD FIELD FOUND: pass=ahChom0e%i \n
           PARAM: prefill_contact_point=\n
           PARAM: prefill_source=\n
           PARAM: prefill_type=\n
